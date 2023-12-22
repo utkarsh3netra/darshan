@@ -1,0 +1,110 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type InternTestField {
+  GSI_1_pk: String
+  GSI_1_sk: String
+  pk: String!
+  sk: String!
+}
+
+type InternTestFieldConnection {
+  items: [InternTestField]
+  nextToken: String
+}
+
+type Mutation {
+  createInternTestField(input: CreateInternTestFieldInput!): InternTestField
+  deleteInternTestField(input: DeleteInternTestFieldInput!): InternTestField
+  updateInternTestField(input: UpdateInternTestFieldInput!): InternTestField
+}
+
+type Query {
+  getInternTestField(pk: String!): InternTestField
+  listInternTestFields(filter: TableInternTestFieldFilterInput, limit: Int, nextToken: String): InternTestFieldConnection
+}
+
+type Subscription {
+  onCreateInternTestField(GSI_1_pk: String, GSI_1_sk: String, pk: String, sk: String): InternTestField @aws_subscribe(mutations : ["createInternTestField"])
+  onDeleteInternTestField(GSI_1_pk: String, GSI_1_sk: String, pk: String, sk: String): InternTestField @aws_subscribe(mutations : ["deleteInternTestField"])
+  onUpdateInternTestField(GSI_1_pk: String, GSI_1_sk: String, pk: String, sk: String): InternTestField @aws_subscribe(mutations : ["updateInternTestField"])
+}
+
+input CreateInternTestFieldInput {
+  GSI_1_pk: String
+  GSI_1_sk: String
+  pk: String!
+  sk: String!
+}
+
+input DeleteInternTestFieldInput {
+  pk: String!
+}
+
+input TableBooleanFilterInput {
+  eq: Boolean
+  ne: Boolean
+}
+
+input TableFloatFilterInput {
+  between: [Float]
+  eq: Float
+  ge: Float
+  gt: Float
+  le: Float
+  lt: Float
+  ne: Float
+}
+
+input TableIDFilterInput {
+  beginsWith: ID
+  between: [ID]
+  contains: ID
+  eq: ID
+  ge: ID
+  gt: ID
+  le: ID
+  lt: ID
+  ne: ID
+  notContains: ID
+}
+
+input TableIntFilterInput {
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+}
+
+input TableInternTestFieldFilterInput {
+  GSI_1_pk: TableStringFilterInput
+  GSI_1_sk: TableStringFilterInput
+  pk: TableStringFilterInput
+  sk: TableStringFilterInput
+}
+
+input TableStringFilterInput {
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+}
+
+input UpdateInternTestFieldInput {
+  GSI_1_pk: String
+  GSI_1_sk: String
+  pk: String!
+  sk: String
+}

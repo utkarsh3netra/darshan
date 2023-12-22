@@ -1,0 +1,4894 @@
+{
+	"info": {
+		"_postman_id": "f37619f4-0775-4117-a5d4-d72a0bf82e12",
+		"name": "synergi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31571700",
+		"_collection_link": "https://synergi-api.postman.co/workspace/Synergi-Team~247f79cb-b79e-4b42-895d-c9433ff395ba/collection/31571700-f37619f4-0775-4117-a5d4-d72a0bf82e12?action=share&source=collection_link&creator=31571700"
+	},
+	"item": [
+		{
+			"name": "segment",
+			"item": [
+				{
+					"name": "get_historical_event_data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/get_historical_event_data?parameter=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"get_historical_event_data"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all_ai_created_segments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/get_all_ai_created_segments_or_offers?event_type=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"get_all_ai_created_segments_or_offers"
+							],
+							"query": [
+								{
+									"key": "event_type",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refinancer-HELOC",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#segment1701691931898061345cae02b6f6be78f10c10600bcd77d67\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Refinancer-HELOC",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=Portfolio_Loan_Data",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target Refinancer-HELOC",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(BORROWER_PERSONA+%3D%3D+4+%26%26+PREPAYMENT_SCORE+%3E%3D+350+%26%26+HELOC_SCORE+%3E%3D+700)&sql_where_condition=(BORROWER_PERSONA+%3D+4+AND+PREPAYMENT_SCORE+%3E%3D+350+AND+HELOC_SCORE+%3E%3D+700)&source=Portfolio_Loan_Data&entity_type=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(BORROWER_PERSONA+%3D%3D+4+%26%26+PREPAYMENT_SCORE+%3E%3D+350+%26%26+HELOC_SCORE+%3E%3D+700)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(BORROWER_PERSONA+%3D+4+AND+PREPAYMENT_SCORE+%3E%3D+350+AND+HELOC_SCORE+%3E%3D+700)"
+								},
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								},
+								{
+									"key": "entity_type",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review Refinancer-HELOC",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"segment_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"segment_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"Refinancer-HELOC\" + pm.variables.replaceIn('{{$randomInt}}') + + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"BORROWER_PERSONA\"\r\n                    },\r\n                    4\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PREPAYMENT_SCORE\"\r\n                    },\r\n                    350\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"HELOC_SCORE\"\r\n                    },\r\n                    700\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(BORROWER_PERSONA == 4 && PREPAYMENT_SCORE >= 350 && HELOC_SCORE >= 700)\",\r\n    \"sql_where_condition\": \"(BORROWER_PERSONA = 4 AND PREPAYMENT_SCORE >= 350 AND HELOC_SCORE >= 700)\",\r\n    \"source\": \"Portfolio_Loan_Data\",\r\n    \"entity_type\": \"segment\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Seeks to continously monitor rate environment and get a better deal on current home. Might want to take a second line of credit.\",\r\n    \"total_records\": 79,\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save segment Refinancer-HELOC",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{segment_pk}}\",\r\n    \"sk\": \"{{segment_sk}}\",\r\n    \"entity_type\": \"segment\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refinancer-Refinance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"event_id\": \"ai#segment170169193189806135ca8ee65af7f697a5dba41a0bac3720d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Refinancer-Refinance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=Portfolio_Loan_Data",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target Refinancer-Refinance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(BORROWER_PERSONA+%3D%3D+4+%26%26+PREPAYMENT_SCORE+%3E%3D+600+%26%26+REFINANCE_SCORE+%3E%3D+400)&sql_where_condition=(BORROWER_PERSONA+%3D+4+AND+PREPAYMENT_SCORE+%3E%3D+600+AND+REFINANCE_SCORE+%3E%3D+400)&source=Portfolio_Loan_Data&entity_type=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(BORROWER_PERSONA+%3D%3D+4+%26%26+PREPAYMENT_SCORE+%3E%3D+600+%26%26+REFINANCE_SCORE+%3E%3D+400)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(BORROWER_PERSONA+%3D+4+AND+PREPAYMENT_SCORE+%3E%3D+600+AND+REFINANCE_SCORE+%3E%3D+400)"
+								},
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								},
+								{
+									"key": "entity_type",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review Refinancer-Refinance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"segment_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"segment_pk\", jsonData[\"pk\"]);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"var RandomName = \"Refinancer-Refinance\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"BORROWER_PERSONA\"\r\n                    },\r\n                    4\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PREPAYMENT_SCORE\"\r\n                    },\r\n                    600\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"REFINANCE_SCORE\"\r\n                    },\r\n                    400\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(BORROWER_PERSONA == 4 && PREPAYMENT_SCORE >= 600 && REFINANCE_SCORE >= 400)\",\r\n    \"sql_where_condition\": \"(BORROWER_PERSONA = 4 AND PREPAYMENT_SCORE >= 600 AND REFINANCE_SCORE >= 400)\",\r\n    \"source\": \"Portfolio_Loan_Data\",\r\n    \"entity_type\": \"segment\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Seeks to continously monitor rate environment and get a better deal on current home. An ideal candidate for a Refinance offer.\",\r\n    \"total_records\": 81,\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Refinancer-Refinance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{segment_pk}}\",\r\n    \"sk\": \"{{segment_sk}}\",\r\n    \"entity_type\": \"segment\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Downsizer-Purchase Conforming",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#segment1701691931898061365814a80c56ccc32caed875878be280d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Downsizer-Purchase Conforming",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=Portfolio_Loan_Data",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target Downsizer-Purchase Conforming",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(BORROWER_PERSONA+%3D%3D+3+%26%26+PREPAYMENT_SCORE+%3E%3D+300+%26%26+PURCHASE_SCORE+%3E%3D+700)&sql_where_condition=(BORROWER_PERSONA+%3D+3+AND+PREPAYMENT_SCORE+%3E%3D+300+AND+PURCHASE_SCORE+%3E%3D+700)&source=Portfolio_Loan_Data&entity_type=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(BORROWER_PERSONA+%3D%3D+3+%26%26+PREPAYMENT_SCORE+%3E%3D+300+%26%26+PURCHASE_SCORE+%3E%3D+700)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(BORROWER_PERSONA+%3D+3+AND+PREPAYMENT_SCORE+%3E%3D+300+AND+PURCHASE_SCORE+%3E%3D+700)"
+								},
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								},
+								{
+									"key": "entity_type",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review Downsizer-Purchase Conforming",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"segment_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"segment_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"Downsizer-Purchase Conforming\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"BORROWER_PERSONA\"\r\n                    },\r\n                    3\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PREPAYMENT_SCORE\"\r\n                    },\r\n                    300\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PURCHASE_SCORE\"\r\n                    },\r\n                    700\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(BORROWER_PERSONA == 3 && PREPAYMENT_SCORE >= 300 && PURCHASE_SCORE >= 700)\",\r\n    \"sql_where_condition\": \"(BORROWER_PERSONA = 3 AND PREPAYMENT_SCORE >= 300 AND PURCHASE_SCORE >= 700)\",\r\n    \"source\": \"Portfolio_Loan_Data\",\r\n    \"entity_type\": \"segment\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Looking to downsize for retirement or lifestyle changes, prefers low-maintenance properties, may have substantial equity. Would benefit from a new home purchase.\",\r\n    \"total_records\": 69,\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Downsizer-Purchase Conforming",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{segment_pk}}\",\r\n    \"sk\": \"{{segment_sk}}\",\r\n    \"entity_type\": \"segment\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Investor-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#segment1701691931898061370206fe28b6a435d9b6878087fa58739\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Investor-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=Portfolio_Loan_Data",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target Investor-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(BORROWER_PERSONA+%3D%3D+2+%26%26+PREPAYMENT_SCORE+%3E%3D+500+%26%26+REFINANCE_SCORE+%3E%3D+600+%26%26+HELOC_SCORE+%3E%3D+400)&sql_where_condition=(BORROWER_PERSONA+%3D+2+AND+PREPAYMENT_SCORE+%3E%3D+500+AND+REFINANCE_SCORE+%3E%3D+600+AND+HELOC_SCORE+%3E%3D+400)&source=Portfolio_Loan_Data&entity_type=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(BORROWER_PERSONA+%3D%3D+2+%26%26+PREPAYMENT_SCORE+%3E%3D+500+%26%26+REFINANCE_SCORE+%3E%3D+600+%26%26+HELOC_SCORE+%3E%3D+400)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(BORROWER_PERSONA+%3D+2+AND+PREPAYMENT_SCORE+%3E%3D+500+AND+REFINANCE_SCORE+%3E%3D+600+AND+HELOC_SCORE+%3E%3D+400)"
+								},
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								},
+								{
+									"key": "entity_type",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review Investor-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"segment_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"segment_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"Investor-Cashout\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"BORROWER_PERSONA\"\r\n                    },\r\n                    2\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PREPAYMENT_SCORE\"\r\n                    },\r\n                    500\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"REFINANCE_SCORE\"\r\n                    },\r\n                    600\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"HELOC_SCORE\"\r\n                    },\r\n                    400\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(BORROWER_PERSONA == 2 && PREPAYMENT_SCORE >= 500 && REFINANCE_SCORE >= 600 && HELOC_SCORE >= 400)\",\r\n    \"sql_where_condition\": \"(BORROWER_PERSONA = 2 AND PREPAYMENT_SCORE >= 500 AND REFINANCE_SCORE >= 600 AND HELOC_SCORE >= 400)\",\r\n    \"source\": \"Portfolio_Loan_Data\",\r\n    \"entity_type\": \"segment\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Seeks properties for investment, interested in market trends, likely to opt for properties with high rental yields. Would prefer to take cash for investments.\",\r\n    \"total_records\": 39,\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Investor-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{segment_pk}}\",\r\n    \"sk\": \"{{segment_sk}}\",\r\n    \"entity_type\": \"segment\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Conservative-Refinance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#segment170169193189806137bea05fb1600611119286087e6427527\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Conservative-Refinance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=Portfolio_Loan_Data",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target Conservative-Refinance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(BORROWER_PERSONA+%3D%3D+1+%26%26+PREPAYMENT_SCORE+%3E%3D+500+%26%26+REFINANCE_SCORE+%3E%3D+600)&sql_where_condition=(BORROWER_PERSONA+%3D+1+AND+PREPAYMENT_SCORE+%3E%3D+500+AND+REFINANCE_SCORE+%3E%3D+600)&source=Portfolio_Loan_Data&entity_type=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(BORROWER_PERSONA+%3D%3D+1+%26%26+PREPAYMENT_SCORE+%3E%3D+500+%26%26+REFINANCE_SCORE+%3E%3D+600)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(BORROWER_PERSONA+%3D+1+AND+PREPAYMENT_SCORE+%3E%3D+500+AND+REFINANCE_SCORE+%3E%3D+600)"
+								},
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								},
+								{
+									"key": "entity_type",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review Conservative-Refinance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"segment_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"segment_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"Conservative-Refinance\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"BORROWER_PERSONA\"\r\n                    },\r\n                    1\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PREPAYMENT_SCORE\"\r\n                    },\r\n                    500\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"REFINANCE_SCORE\"\r\n                    },\r\n                    600\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(BORROWER_PERSONA == 1 && PREPAYMENT_SCORE >= 500 && REFINANCE_SCORE >= 600)\",\r\n    \"sql_where_condition\": \"(BORROWER_PERSONA = 1 AND PREPAYMENT_SCORE >= 500 AND REFINANCE_SCORE >= 600)\",\r\n    \"source\": \"Portfolio_Loan_Data\",\r\n    \"entity_type\": \"segment\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Risk-averse, seeks stable investments, prefers fixed-rate mortgages, values long-term financial security. Would benefit from a Refinance.\",\r\n    \"total_records\": 55,\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Conservative-Refinance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{segment_pk}}\",\r\n    \"sk\": \"{{segment_sk}}\",\r\n    \"entity_type\": \"segment\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Conservative-HELOC",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#segment170169193189806139038bb1bf03ac2b5f920021f99e1b799\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Conservative-HELOC",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=Portfolio_Loan_Data",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target Conservative-HELOC",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(BORROWER_PERSONA+%3D%3D+1+%26%26+PREPAYMENT_SCORE+%3E%3D+500+%26%26+HELOC_SCORE+%3E%3D+600)&sql_where_condition=(BORROWER_PERSONA+%3D+1+AND+PREPAYMENT_SCORE+%3E%3D+500+AND+HELOC_SCORE+%3E%3D+600)&source=Portfolio_Loan_Data&entity_type=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(BORROWER_PERSONA+%3D%3D+1+%26%26+PREPAYMENT_SCORE+%3E%3D+500+%26%26+HELOC_SCORE+%3E%3D+600)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(BORROWER_PERSONA+%3D+1+AND+PREPAYMENT_SCORE+%3E%3D+500+AND+HELOC_SCORE+%3E%3D+600)"
+								},
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								},
+								{
+									"key": "entity_type",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review Conservative-HELOC",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"segment_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"segment_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"Conservative-HELOC\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"BORROWER_PERSONA\"\r\n                    },\r\n                    1\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PREPAYMENT_SCORE\"\r\n                    },\r\n                    500\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"HELOC_SCORE\"\r\n                    },\r\n                    600\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(BORROWER_PERSONA == 1 && PREPAYMENT_SCORE >= 500 && HELOC_SCORE >= 600)\",\r\n    \"sql_where_condition\": \"(BORROWER_PERSONA = 1 AND PREPAYMENT_SCORE >= 500 AND HELOC_SCORE >= 600)\",\r\n    \"source\": \"Portfolio_Loan_Data\",\r\n    \"entity_type\": \"segment\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Risk-averse, seeks stable investments, prefers fixed-rate mortgages, values long-term financial security. Would prefer a Line of Credit.\",\r\n    \"total_records\": 57,\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Conservative-HELOC",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{segment_pk}}\",\r\n    \"sk\": \"{{segment_sk}}\",\r\n    \"entity_type\": \"segment\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refinancer-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#segment170169193189806139b6e60f20d2f91d9fc6b5675a95da483\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Refinancer-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=Portfolio_Loan_Data",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target Refinancer-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(BORROWER_PERSONA+%3D%3D+4+%26%26+PREPAYMENT_SCORE+%3E%3D+550+%26%26+REFINANCE_SCORE+%3E%3D+400+%26%26+HELOC_SCORE+%3E%3D+450)&sql_where_condition=(BORROWER_PERSONA+%3D+4+AND+PREPAYMENT_SCORE+%3E%3D+550+AND+REFINANCE_SCORE+%3E%3D+400+AND+HELOC_SCORE+%3E%3D+450)&source=Portfolio_Loan_Data&entity_type=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(BORROWER_PERSONA+%3D%3D+4+%26%26+PREPAYMENT_SCORE+%3E%3D+550+%26%26+REFINANCE_SCORE+%3E%3D+400+%26%26+HELOC_SCORE+%3E%3D+450)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(BORROWER_PERSONA+%3D+4+AND+PREPAYMENT_SCORE+%3E%3D+550+AND+REFINANCE_SCORE+%3E%3D+400+AND+HELOC_SCORE+%3E%3D+450)"
+								},
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								},
+								{
+									"key": "entity_type",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review Refinancer-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"segment_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"segment_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"Refinancer-Cashout\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"BORROWER_PERSONA\"\r\n                    },\r\n                    4\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PREPAYMENT_SCORE\"\r\n                    },\r\n                    550\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"REFINANCE_SCORE\"\r\n                    },\r\n                    400\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"HELOC_SCORE\"\r\n                    },\r\n                    450\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(BORROWER_PERSONA == 4 && PREPAYMENT_SCORE >= 550 && REFINANCE_SCORE >= 400 && HELOC_SCORE >= 450)\",\r\n    \"sql_where_condition\": \"(BORROWER_PERSONA = 4 AND PREPAYMENT_SCORE >= 550 AND REFINANCE_SCORE >= 400 AND HELOC_SCORE >= 450)\",\r\n    \"source\": \"Portfolio_Loan_Data\",\r\n    \"entity_type\": \"segment\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Seeks to continously monitor rate environment and get a better deal on current home. Might want to take cashout with rising property prices.\",\r\n    \"total_records\": 51,\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Refinancer-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{segment_pk}}\",\r\n    \"sk\": \"{{segment_sk}}\",\r\n    \"entity_type\": \"segment\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upgrader-Purchase FHA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#segment170169193189906899645103e0eeb78f0b959417a33b255b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Upgrader-Purchase FHA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=Portfolio_Loan_Data",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target Upgrader-Purchase FHA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(BORROWER_PERSONA+%3D%3D+5+%26%26+PREPAYMENT_SCORE+%3E%3D+300+%26%26+PURCHASE_SCORE+%3E%3D+600)&sql_where_condition=(BORROWER_PERSONA+%3D+5+AND+PREPAYMENT_SCORE+%3E%3D+300+AND+PURCHASE_SCORE+%3E%3D+600)&source=Portfolio_Loan_Data&entity_type=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(BORROWER_PERSONA+%3D%3D+5+%26%26+PREPAYMENT_SCORE+%3E%3D+300+%26%26+PURCHASE_SCORE+%3E%3D+600)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(BORROWER_PERSONA+%3D+5+AND+PREPAYMENT_SCORE+%3E%3D+300+AND+PURCHASE_SCORE+%3E%3D+600)"
+								},
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								},
+								{
+									"key": "entity_type",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review Upgrader-Purchase FHA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"segment_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"segment_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"Upgrader-Purchase FHA\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"BORROWER_PERSONA\"\r\n                    },\r\n                    5\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PREPAYMENT_SCORE\"\r\n                    },\r\n                    300\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PURCHASE_SCORE\"\r\n                    },\r\n                    600\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(BORROWER_PERSONA == 5 && PREPAYMENT_SCORE >= 300 && PURCHASE_SCORE >= 600)\",\r\n    \"sql_where_condition\": \"(BORROWER_PERSONA = 5 AND PREPAYMENT_SCORE >= 300 AND PURCHASE_SCORE >= 600)\",\r\n    \"source\": \"Portfolio_Loan_Data\",\r\n    \"entity_type\": \"segment\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Existing homeowner looking to upgrade, values larger space or better neighborhoods, has past mortgage experience. Might want to take a new FHA Purchase Loan.\",\r\n    \"total_records\": 95,\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Upgrader-Purchase FHA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{segment_pk}}\",\r\n    \"sk\": \"{{segment_sk}}\",\r\n    \"entity_type\": \"segment\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upgrader-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#segment1701691931899068b65afb2393fc1959ce46f3ff7551713e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Upgrader-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=Portfolio_Loan_Data",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target Upgrader-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(BORROWER_PERSONA+%3D%3D+5+%26%26+PREPAYMENT_SCORE+%3E%3D+500+%26%26+REFINANCE_SCORE+%3E%3D+600+%26%26+HELOC_SCORE+%3E%3D+500)&sql_where_condition=(BORROWER_PERSONA+%3D+5+AND+PREPAYMENT_SCORE+%3E%3D+500+AND+REFINANCE_SCORE+%3E%3D+600+AND+HELOC_SCORE+%3E%3D+500)&source=Portfolio_Loan_Data&entity_type=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(BORROWER_PERSONA+%3D%3D+5+%26%26+PREPAYMENT_SCORE+%3E%3D+500+%26%26+REFINANCE_SCORE+%3E%3D+600+%26%26+HELOC_SCORE+%3E%3D+500)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(BORROWER_PERSONA+%3D+5+AND+PREPAYMENT_SCORE+%3E%3D+500+AND+REFINANCE_SCORE+%3E%3D+600+AND+HELOC_SCORE+%3E%3D+500)"
+								},
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								},
+								{
+									"key": "entity_type",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review Upgrader-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"segment_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"segment_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"Upgrader-Cashout\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"BORROWER_PERSONA\"\r\n                    },\r\n                    5\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PREPAYMENT_SCORE\"\r\n                    },\r\n                    500\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"REFINANCE_SCORE\"\r\n                    },\r\n                    600\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"HELOC_SCORE\"\r\n                    },\r\n                    500\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(BORROWER_PERSONA == 5 && PREPAYMENT_SCORE >= 500 && REFINANCE_SCORE >= 600 && HELOC_SCORE >= 500)\",\r\n    \"sql_where_condition\": \"(BORROWER_PERSONA = 5 AND PREPAYMENT_SCORE >= 500 AND REFINANCE_SCORE >= 600 AND HELOC_SCORE >= 500)\",\r\n    \"source\": \"Portfolio_Loan_Data\",\r\n    \"entity_type\": \"segment\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Existing homeowner looking to upgrade, values larger space or better neighborhoods, has past mortgage experience. Might want to take equity out for a new home purchase.\",\r\n    \"total_records\": 36,\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Upgrader-Cashout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{segment_pk}}\",\r\n    \"sk\": \"{{segment_sk}}\",\r\n    \"entity_type\": \"segment\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "copy segment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=Portfolio_Loan_Data",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(BORROWER_PERSONA+%3D%3D+5+%26%26+PREPAYMENT_SCORE+%3E%3D+500+%26%26+REFINANCE_SCORE+%3E%3D+600+%26%26+HELOC_SCORE+%3E%3D+500)&sql_where_condition=(BORROWER_PERSONA+%3D+5+AND+PREPAYMENT_SCORE+%3E%3D+500+AND+REFINANCE_SCORE+%3E%3D+600+AND+HELOC_SCORE+%3E%3D+500)&source=Portfolio_Loan_Data&entity_type=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(BORROWER_PERSONA+%3D%3D+5+%26%26+PREPAYMENT_SCORE+%3E%3D+500+%26%26+REFINANCE_SCORE+%3E%3D+600+%26%26+HELOC_SCORE+%3E%3D+500)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(BORROWER_PERSONA+%3D+5+AND+PREPAYMENT_SCORE+%3E%3D+500+AND+REFINANCE_SCORE+%3E%3D+600+AND+HELOC_SCORE+%3E%3D+500)"
+								},
+								{
+									"key": "source",
+									"value": "Portfolio_Loan_Data"
+								},
+								{
+									"key": "entity_type",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review copy segment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"segment_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"segment_pk\", jsonData[\"pk\"]);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"copy segment\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"BORROWER_PERSONA\"\r\n                    },\r\n                    5\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"PREPAYMENT_SCORE\"\r\n                    },\r\n                    500\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"REFINANCE_SCORE\"\r\n                    },\r\n                    600\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"HELOC_SCORE\"\r\n                    },\r\n                    500\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(BORROWER_PERSONA == 5 && PREPAYMENT_SCORE >= 500 && REFINANCE_SCORE >= 600 && HELOC_SCORE >= 500)\",\r\n    \"sql_where_condition\": \"(BORROWER_PERSONA = 5 AND PREPAYMENT_SCORE >= 500 AND REFINANCE_SCORE >= 600 AND HELOC_SCORE >= 500)\",\r\n    \"source\": \"Portfolio_Loan_Data\",\r\n    \"entity_type\": \"segment\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Existing homeowner looking to upgrade, values larger space or better neighborhoods, has past mortgage experience. Might want to take equity out for a new home purchase.\",\r\n    \"total_records\": 36,\r\n    \"process_type\": \"copy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save copy segment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{segment_pk}}\",\r\n    \"sk\": \"{{segment_sk}}\",\r\n    \"entity_type\": \"segment\",\r\n    \"process_type\": \"copy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete segment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_sk\": \"segment#1702027402253229686d23041d631ba57677099ff37f73448\",\r\n    \"event_pk\": \"segment#upgrader-cashout 5612 (1)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/delete_item",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"delete_item"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Offer",
+			"item": [
+				{
+					"name": "offfer_historical_event_data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/get_historical_event_data?parameter=offer",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"get_historical_event_data"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "offer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_all_ai_created_offers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/get_all_ai_created_segments_or_offers?event_type=offer",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"get_all_ai_created_segments_or_offers"
+							],
+							"query": [
+								{
+									"key": "event_type",
+									"value": "offer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "General",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#offer#16959320432108868fa221edf1c22aaf30501914660d4013\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit General",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=SNG_PRCNG_OUTPUT",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "SNG_PRCNG_OUTPUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FHA PI Savings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#offer#1695932043210886a2a80e882f896c9c16001c2fedb733bc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit FHA PI Savings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=SNG_PRCNG_OUTPUT",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "SNG_PRCNG_OUTPUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target FHA PI Savings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(NEW_LOAN_PURPOSE+%3D%3D+%27R%27+%26%26+NEW_PI_SAVINGS_MO+%3E%3D+70+%26%26+NEW_TERM_REDUCTION+%3C%3D+0+%26%26+NEW_TERM_REDUCTION+%3E%3D+-60)&sql_where_condition=(NEW_LOAN_PURPOSE+%3D+%27R%27+AND+NEW_PI_SAVINGS_MO+%3E%3D+70+AND+NEW_TERM_REDUCTION+%3C%3D+0+AND+NEW_TERM_REDUCTION+%3E%3D+-60)&source=SNG_PRCNG_OUTPUT&entity_type=offer",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(NEW_LOAN_PURPOSE+%3D%3D+%27R%27+%26%26+NEW_PI_SAVINGS_MO+%3E%3D+70+%26%26+NEW_TERM_REDUCTION+%3C%3D+0+%26%26+NEW_TERM_REDUCTION+%3E%3D+-60)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(NEW_LOAN_PURPOSE+%3D+%27R%27+AND+NEW_PI_SAVINGS_MO+%3E%3D+70+AND+NEW_TERM_REDUCTION+%3C%3D+0+AND+NEW_TERM_REDUCTION+%3E%3D+-60)"
+								},
+								{
+									"key": "source",
+									"value": "SNG_PRCNG_OUTPUT"
+								},
+								{
+									"key": "entity_type",
+									"value": "offer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review FHA PI Savings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"offer_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"offer_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"FHA PI Savings\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"NEW_LOAN_PURPOSE\"\r\n                    },\r\n                    \"R\"\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"NEW_PI_SAVINGS_MO\"\r\n                    },\r\n                    70\r\n                ]\r\n            },\r\n            {\r\n                \"<=\": [\r\n                    {\r\n                        \"var\": \"NEW_TERM_REDUCTION\"\r\n                    },\r\n                    0\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"NEW_TERM_REDUCTION\"\r\n                    },\r\n                    -60\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(NEW_LOAN_PURPOSE == 'R' && NEW_PI_SAVINGS_MO >= 70 && NEW_TERM_REDUCTION <= 0 && NEW_TERM_REDUCTION >= -60)\",\r\n    \"sql_where_condition\": \"(NEW_LOAN_PURPOSE = 'R' AND NEW_PI_SAVINGS_MO >= 70 AND NEW_TERM_REDUCTION <= 0 AND NEW_TERM_REDUCTION >= -60)\",\r\n    \"source\": \"SNG_PRCNG_OUTPUT\",\r\n    \"entity_type\": \"offer\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Pricing Engine based offers. They apply your rate data to your list and generate personalized scenarios for borrower engagment.\",\r\n    \"total_records\": 320,\r\n    \"process_type\": \"create\",\r\n    \"dateTime\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save FHA PI Savings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{offer_pk}}\",\r\n    \"sk\": \"{{offer_sk}}\",\r\n    \"entity_type\": \"offer\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rate Term PI Benefit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#offer#1695932043210886ab2b81c6691c98cbb85716352053f03d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Rate Term PI Benefit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=SNG_PRCNG_OUTPUT",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "SNG_PRCNG_OUTPUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target Rate Term PI Benefit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(NEW_LOAN_PURPOSE+%3D%3D+%27R%27+%26%26+NEW_PI_SAVINGS_MO+%3E%3D+70+%26%26+NEW_TERM_REDUCTION+%3C%3D+0+%26%26+NEW_TERM_REDUCTION+%3E%3D+-60)&sql_where_condition=(NEW_LOAN_PURPOSE+%3D+%27R%27+AND+NEW_PI_SAVINGS_MO+%3E%3D+70+AND+NEW_TERM_REDUCTION+%3C%3D+0+AND+NEW_TERM_REDUCTION+%3E%3D+-60)&source=SNG_PRCNG_OUTPUT&entity_type=offer",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(NEW_LOAN_PURPOSE+%3D%3D+%27R%27+%26%26+NEW_PI_SAVINGS_MO+%3E%3D+70+%26%26+NEW_TERM_REDUCTION+%3C%3D+0+%26%26+NEW_TERM_REDUCTION+%3E%3D+-60)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(NEW_LOAN_PURPOSE+%3D+%27R%27+AND+NEW_PI_SAVINGS_MO+%3E%3D+70+AND+NEW_TERM_REDUCTION+%3C%3D+0+AND+NEW_TERM_REDUCTION+%3E%3D+-60)"
+								},
+								{
+									"key": "source",
+									"value": "SNG_PRCNG_OUTPUT"
+								},
+								{
+									"key": "entity_type",
+									"value": "offer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review Rate Term PI Benefit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"offer_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"offer_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \" Rate Term PI Benefit\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"NEW_LOAN_PURPOSE\"\r\n                    },\r\n                    \"R\"\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"NEW_PI_SAVINGS_MO\"\r\n                    },\r\n                    70\r\n                ]\r\n            },\r\n            {\r\n                \"<=\": [\r\n                    {\r\n                        \"var\": \"NEW_TERM_REDUCTION\"\r\n                    },\r\n                    0\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"NEW_TERM_REDUCTION\"\r\n                    },\r\n                    -60\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(NEW_LOAN_PURPOSE == 'R' && NEW_PI_SAVINGS_MO >= 70 && NEW_TERM_REDUCTION <= 0 && NEW_TERM_REDUCTION >= -60)\",\r\n    \"sql_where_condition\": \"(NEW_LOAN_PURPOSE = 'R' AND NEW_PI_SAVINGS_MO >= 70 AND NEW_TERM_REDUCTION <= 0 AND NEW_TERM_REDUCTION >= -60)\",\r\n    \"source\": \"SNG_PRCNG_OUTPUT\",\r\n    \"entity_type\": \"offer\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Pricing Engine based offers. They apply your rate data to your list and generate personalized scenarios for borrower engagment.\",\r\n    \"total_records\": 320,\r\n    \"process_type\": \"create\",\r\n    \"dateTime\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Rate Term PI Benefit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{offer_pk}}\",\r\n    \"sk\": \"{{offer_sk}}\",\r\n    \"entity_type\": \"offer\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CashOut",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#offer#1695932043210886adb7d403892358bb050002be94a7bd42\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit CashOut",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=SNG_PRCNG_OUTPUT",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "SNG_PRCNG_OUTPUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target CashOut",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(NEW_LOAN_PURPOSE+%3D%3D+%27C%27+%26%26+NEW_TERM+%3D%3D+360+%26%26+NEW_CASHOUT+%3E%3D+20000+%26%26+NEW_CASHOUT+%3C%3D+250000)&sql_where_condition=(NEW_LOAN_PURPOSE+%3D+%27C%27+AND+NEW_TERM+%3D+360+AND+NEW_CASHOUT+%3E%3D+20000+AND+NEW_CASHOUT+%3C%3D+250000)&source=SNG_PRCNG_OUTPUT&entity_type=offer",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(NEW_LOAN_PURPOSE+%3D%3D+%27C%27+%26%26+NEW_TERM+%3D%3D+360+%26%26+NEW_CASHOUT+%3E%3D+20000+%26%26+NEW_CASHOUT+%3C%3D+250000)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(NEW_LOAN_PURPOSE+%3D+%27C%27+AND+NEW_TERM+%3D+360+AND+NEW_CASHOUT+%3E%3D+20000+AND+NEW_CASHOUT+%3C%3D+250000)"
+								},
+								{
+									"key": "source",
+									"value": "SNG_PRCNG_OUTPUT"
+								},
+								{
+									"key": "entity_type",
+									"value": "offer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review CashOut",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"offer_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"offer_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"CashOut\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"NEW_LOAN_PURPOSE\"\r\n                    },\r\n                    \"C\"\r\n                ]\r\n            },\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"NEW_TERM\"\r\n                    },\r\n                    360\r\n                ]\r\n            },\r\n            {\r\n                \">=\": [\r\n                    {\r\n                        \"var\": \"NEW_CASHOUT\"\r\n                    },\r\n                    20000\r\n                ]\r\n            },\r\n            {\r\n                \"<=\": [\r\n                    {\r\n                        \"var\": \"NEW_CASHOUT\"\r\n                    },\r\n                    250000\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(NEW_LOAN_PURPOSE == 'C' && NEW_TERM == 360 && NEW_CASHOUT >= 20000 && NEW_CASHOUT <= 250000)\",\r\n    \"sql_where_condition\": \"(NEW_LOAN_PURPOSE = 'C' AND NEW_TERM = 360 AND NEW_CASHOUT >= 20000 AND NEW_CASHOUT <= 250000)\",\r\n    \"source\": \"SNG_PRCNG_OUTPUT\",\r\n    \"entity_type\": \"offer\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Pricing Engine based offers. They apply your rate data to your list and generate personalized scenarios for borrower engagment.\",\r\n    \"total_records\": 993,\r\n    \"process_type\": \"create\",\r\n    \"dateTime\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save CashOut",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{offer_pk}}\",\r\n    \"sk\": \"{{offer_sk}}\",\r\n    \"entity_type\": \"offer\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Purchase FHA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_id\": \"ai#offer#1695932043210886da790df8f9e6b42417400f45424f6090\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_ai_create_v2",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_ai_create_v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Purchase FHA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=SNG_PRCNG_OUTPUT",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "SNG_PRCNG_OUTPUT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get target Purchase FHA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_total_records?where_condition=(NEW_LOAN_PURPOSE+%3D%3D+%27P%27+%26%26+NEW_TERM+%3D%3D+360)&sql_where_condition=(NEW_LOAN_PURPOSE+%3D+%27P%27+AND+NEW_TERM+%3D+360)&source=SNG_PRCNG_OUTPUT&entity_type=offer",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_total_records"
+							],
+							"query": [
+								{
+									"key": "where_condition",
+									"value": "(NEW_LOAN_PURPOSE+%3D%3D+%27P%27+%26%26+NEW_TERM+%3D%3D+360)"
+								},
+								{
+									"key": "sql_where_condition",
+									"value": "(NEW_LOAN_PURPOSE+%3D+%27P%27+AND+NEW_TERM+%3D+360)"
+								},
+								{
+									"key": "source",
+									"value": "SNG_PRCNG_OUTPUT"
+								},
+								{
+									"key": "entity_type",
+									"value": "offer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review Purchase FHA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"offer_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"offer_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"Purchase FHA\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"NEW_LOAN_PURPOSE\"\r\n                    },\r\n                    \"P\"\r\n                ]\r\n            },\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"NEW_TERM\"\r\n                    },\r\n                    360\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(NEW_LOAN_PURPOSE == 'P' && NEW_TERM == 360)\",\r\n    \"sql_where_condition\": \"(NEW_LOAN_PURPOSE = 'P' AND NEW_TERM = 360)\",\r\n    \"source\": \"SNG_PRCNG_OUTPUT\",\r\n    \"entity_type\": \"offer\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Pricing Engine based offers. They apply your rate data to your list and generate personalized scenarios for borrower engagment.\",\r\n    \"total_records\": 1602,\r\n    \"process_type\": \"create\",\r\n    \"dateTime\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Purchase FHA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{offer_pk}}\",\r\n    \"sk\": \"{{offer_sk}}\",\r\n    \"entity_type\": \"offer\",\r\n    \"process_type\": \"create\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "copy offer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_custom_get_info?pk='{{offer_pk}}'&sk='{{offer_sk}}'&entity_type=offer&process_type=copy",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_custom_get_info"
+							],
+							"query": [
+								{
+									"key": "pk",
+									"value": "'{{offer_pk}}'"
+								},
+								{
+									"key": "sk",
+									"value": "'{{offer_sk}}'"
+								},
+								{
+									"key": "entity_type",
+									"value": "offer"
+								},
+								{
+									"key": "process_type",
+									"value": "copy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "copy edit offer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_source_config?source=RateSheet",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_source_config"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "RateSheet"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "review copy offer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"offer_sk\", jsonData[\"sk\"]);\r",
+									"pm.collectionVariables.set(\"offer_pk\", jsonData[\"pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"copy offer\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"json_where_condition\": {\r\n        \"and\": [\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"NEW_LOAN_PURPOSE\"\r\n                    },\r\n                    \"P\"\r\n                ]\r\n            },\r\n            {\r\n                \"==\": [\r\n                    {\r\n                        \"var\": \"NEW_TERM\"\r\n                    },\r\n                    360\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"where_condition\": \"(NEW_LOAN_PURPOSE == 'P' && NEW_TERM == 360)\",\r\n    \"sql_where_condition\": \"(NEW_LOAN_PURPOSE = 'P' AND NEW_TERM = 360)\",\r\n    \"source\": \"RateSheet\",\r\n    \"entity_type\": \"offer\",\r\n    \"name\": \"{{rndname}}\",\r\n    \"description\": \"Pricing Engine based offers. They apply your rate data to your list and generate personalized scenarios for borrower engagment.\",\r\n    \"total_records\": 1602,\r\n    \"process_type\": \"copy\",\r\n    \"dateTime\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save copy offer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pk\": \"{{offer_pk}}\",\r\n    \"sk\": \"{{offer_sk}}\",\r\n    \"entity_type\": \"offer\",\r\n    \"process_type\": \"copy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_offer_save",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_offer_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete offer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"event_sk\": \"offer#170203124030990128f35c271278c32e864d29cd99bac5230\",\r\n    \"event_pk\": \"offer#purchase fha 3123 (1)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/delete_item",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"delete_item"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Intregrations",
+			"item": [
+				{
+					"name": "get_historical_event_data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/get_historical_event_data?parameter=document",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"get_historical_event_data"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "document"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "date import",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/mapping_tables",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"mapping_tables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "agree and upload",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/get_document_file_upload_s3_presigned_url?file_name=LOAN+SAMPLE+(822).csv&server_table=Chat_Logs",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"get_document_file_upload_s3_presigned_url"
+							],
+							"query": [
+								{
+									"key": "file_name",
+									"value": "LOAN+SAMPLE+(822).csv"
+								},
+								{
+									"key": "server_table",
+									"value": "Chat_Logs"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "document create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uploadFileName\": \"LOANSAMPLE822csvdocument1702032343167298818b560e0ae04a5fc3d9e4b8192911ba5.csv\",\r\n    \"importName\": \"test 5341\",\r\n    \"uploadType\": \"Chat_Logs\",\r\n    \"description\": \"test......\"\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/document_create",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"document_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "document_mapping_and_restore",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document_id\": \"document#Chat_Logs_temp\",\r\n    \"mapped_document\": {\r\n        \"index\": \"Agent ID who responded\",\r\n        \"UNIQUE_ID\": \"Chat End Date Time\",\r\n        \"CURRENT_FICO_PRIM\": \"\",\r\n        \"PROP_STATE\": \"\",\r\n        \"PROP_ZIP\": \"\",\r\n        \"UNPAID_BALANCE\": \"\",\r\n        \"INTEREST_RATE\": \"\",\r\n        \"PRINCIPAL_AND_INTEREST\": \"\",\r\n        \"MI_AMT\": \"\",\r\n        \"LOAN_TYPE\": \"\",\r\n        \"LOAN_TERM\": \"\",\r\n        \"ORIGINATION_DATE\": \"\",\r\n        \"REMAINING_TERM\": \"\",\r\n        \"ORIG_HELOC_BALANCE\": \"\",\r\n        \"CURRENT_PROPERTY_VALUE\": \"\",\r\n        \"LTV\": \"\",\r\n        \"PROPERTY_TYPE\": \"\",\r\n        \"CURRENT_OCCUPANCY_TYPE\": \"\",\r\n        \"NUMBER_OF_UNITS\": \"\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/document_mapping_and_restore",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"document_mapping_and_restore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "document_update_with_selected_channels",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document_id\": \"document#Chat_Logs_temp\",\r\n    \"selected_channels\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/document_update_with_selected_channels",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"document_update_with_selected_channels"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "campaigns",
+			"item": [
+				{
+					"name": "get_historical_event_data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/get_historical_event_data?parameter=campaign",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"get_historical_event_data"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "campaign"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "is_user_capable_to_create_campaign",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/is_user_capable_to_create_campaign",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"is_user_capable_to_create_campaign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new campaigns",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/get_campaign_objective_channel_vendors",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"get_campaign_objective_channel_vendors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_campaign_id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"campaign_sk\", jsonData[\"response\"][\"campaign_sk\"]);\r",
+									"pm.collectionVariables.set(\"campaign_pk\", jsonData[\"response\"][\"campaign_pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var RandomName = \"campaign test\" + pm.variables.replaceIn('{{$randomInt}}') + pm.variables.replaceIn('{{$randomInt}}');\r",
+									"pm.environment.set(\"rndname\",RandomName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{rndname}}\",\r\n    \"objective\": \"Awarness\",\r\n    \"selected_channel_vendors\": [\r\n        {\r\n            \"channel\": \"Email\",\r\n            \"vendors\": [\r\n                \"Adobe\"\r\n            ]\r\n        }\r\n    ],\r\n    \"description\": \"test.........\",\r\n    \"channel_type\": \"manual\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/create_campaign_id",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"create_campaign_id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "campaign_related_sourcesparameter=document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"GSI_sk\", jsonData[\"GSI_2_sk\"]);\r",
+									"pm.collectionVariables.set(\"GSI_pk\", jsonData[\"GSI_2_pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/campaign_related_sources?parameter=document",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"campaign_related_sources"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "document"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "campaign_ai_segments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"segment_sk\", jsonData[\"segment_sk\"]);\r",
+									"pm.collectionVariables.set(\"segment_pk\", jsonData[\"segment_pk\"]);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/campaign_ai_segments",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"campaign_ai_segments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_data_source_or_segment_2_campaign",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data_sources\": [\r\n        {\r\n            \"name\": \"Loan Sample Data\",\r\n            \"document_pk\": \"document#Portfolio_Loan_Data\",\r\n            \"document_sk\": \"document#Portfolio_Loan_Data\"\r\n        }\r\n    ],\r\n    \"data_sources_type\": \"Ai\",\r\n    \"campaign_pk\": \"{{campaign_pk}}\",\r\n    \"campaign_sk\": \"{{campaign_sk}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/add_data_source_or_segment_2_campaign",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"add_data_source_or_segment_2_campaign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "campaign_related_sources?parameter=segment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/campaign_related_sources?parameter=segment",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"campaign_related_sources"
+							],
+							"query": [
+								{
+									"key": "parameter",
+									"value": "segment"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_data_source_or_segment_2_campaign",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"segments\": [\r\n        {\r\n            \"name\": \"Upgrader-Cashout1747\",\r\n            \"segment_pk\": \"segment#upgrader-cashout1747\",\r\n            \"segment_sk\": \"segment#17018663455989084aba2ecdc2f1ddd7f1339dff8aee0187c\"\r\n        }\r\n    ],\r\n    \"segments_type\": \"manual\",\r\n    \"campaign_pk\": \"{{campaign_pk}}\",\r\n    \"campaign_sk\": \"{{campaign_sk}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/add_data_source_or_segment_2_campaign",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"add_data_source_or_segment_2_campaign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "segment_multiple_offers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_multiple_offers?campaign_pk={{campaign_pk}}&campaign_sk={{campaign_sk}}",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_multiple_offers"
+							],
+							"query": [
+								{
+									"key": "campaign_pk",
+									"value": "{{campaign_pk}}"
+								},
+								{
+									"key": "campaign_sk",
+									"value": "{{campaign_sk}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "campaign_add_segment_offers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"campaign_pk\": \"{{campaign_pk}}\",\r\n    \"campaign_sk\": \"{{campaign_sk}}\",\r\n    \"channel_segment_offer\": [\r\n        {\r\n            \"channel\": \"Email\",\r\n            \"segment_offers\": [\r\n                {\r\n                    \"segment_name\": \"Upgrader-Cashout1747\",\r\n                    \"segment_pk\": \"segment#upgrader-cashout1747\",\r\n                    \"segment_sk\": \"segment#17018663455989084aba2ecdc2f1ddd7f1339dff8aee0187c\",\r\n                    \"segment_start_datetime\": \"2023-12-08 17:04\",\r\n                    \"segment_end_datetime\": \" \",\r\n                    \"segment_min_budget\": \"\",\r\n                    \"segment_max_budget\": \"\",\r\n                    \"segment_budget_type\": \"daily\",\r\n                    \"segment_no_limit\": true,\r\n                    \"segment_batch_size\": \"\",\r\n                    \"segment_batch_type\": \"daily\",\r\n                    \"offers\": [\r\n                        {\r\n                            \"offer_name\": \"Rate Term PI Benefit 1\",\r\n                            \"offer_sk\": \"offer#1701860468650535860bf5de82712db4884280d349cb7c566\",\r\n                            \"offer_pk\": \"offer#rate term pi benefit 1\",\r\n                            \"offer_segment_count\": 8,\r\n                            \"template_pk\": \"8954253947521835103\",\r\n                            \"template_sk\": \"8954253947521835103\",\r\n                            \"template_name\": \"Adobe Creative Suite\"\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"total_offers\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/campaign_add_segment_offers",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"campaign_add_segment_offers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "segment_multiple_offers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/segment_multiple_offers?campaign_pk={{campaign_pk}}&campaign_sk={{campaign_sk}}",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"segment_multiple_offers"
+							],
+							"query": [
+								{
+									"key": "campaign_pk",
+									"value": "{{campaign_pk}}"
+								},
+								{
+									"key": "campaign_sk",
+									"value": "{{campaign_sk}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "campaign_confirm",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"campaign_pk\": \"{{campaign_pk}}\",\r\n    \"campaign_sk\": \"{{campaign_sk}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{dev}}.execute-api.us-east-1.amazonaws.com/v1/campaign_confirm",
+							"protocol": "https",
+							"host": [
+								"{{dev}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"v1",
+								"campaign_confirm"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest({",
+					"    url: 'https://3m2ysd5hue.execute-api.us-east-1.amazonaws.com/private/get-auth',",
+					"    method: 'GET',",
+					"    header: {",
+					"        'content-type': 'application/json'",
+					"    }",
+					"}, (err, res) => pm.collectionVariables.set(\"TOKEN\", res.json().tokens.AccessToken));"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "TOKEN",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "sk",
+			"value": ""
+		},
+		{
+			"key": "pk",
+			"value": ""
+		},
+		{
+			"key": "segment_pk",
+			"value": ""
+		},
+		{
+			"key": "segment_sk",
+			"value": ""
+		},
+		{
+			"key": "offer_sk",
+			"value": ""
+		},
+		{
+			"key": "offer_pk",
+			"value": ""
+		},
+		{
+			"key": "campaign_sk",
+			"value": ""
+		},
+		{
+			"key": "campaign_pk",
+			"value": ""
+		},
+		{
+			"key": "dev",
+			"value": "u9mscmmds5"
+		},
+		{
+			"key": "app",
+			"value": "vuhnnch690"
+		},
+		{
+			"key": "GSI_sk",
+			"value": ""
+		},
+		{
+			"key": "GSI_pk",
+			"value": ""
+		}
+	]
+}

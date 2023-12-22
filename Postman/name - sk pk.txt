@@ -1,0 +1,31 @@
+REVIEW
+
+rndname
+
+var RandomName = "Refinancer-HELOC" + pm.variables.replaceIn('{{$randomInt}}');
+pm.environment.set("rndname",RandomName);
+
+var jsonData = JSON.parse(responseBody);
+pm.collectionVariables.set("segment_sk", jsonData["sk"]);
+pm.collectionVariables.set("segment_pk", jsonData["pk"]);
+
+SAVE
+
+segment_pk
+{{segment_sk}}
+
+REVIEW
+
+{{rndname}}
+
+var RandomName = "Refinancer-HELOC" + pm.variables.replaceIn('{{$randomInt}}');
+pm.environment.set("rndname",RandomName);
+
+var jsonData = JSON.parse(responseBody);
+pm.collectionVariables.set("offer_sk", jsonData["sk"]);
+pm.collectionVariables.set("offer_pk", jsonData["pk"]);
+
+SAVE
+
+{{offer_pk}}
+{{offer_sk}}

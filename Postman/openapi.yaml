@@ -1,0 +1,2471 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: synergi
+  contact: {}
+host: u9mscmmds5.execute-api.us-east-1.amazonaws.com
+basePath: /v1
+securityDefinitions: {}
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /get_historical_event_data:
+    get:
+      summary: get_historical_event_data
+      tags:
+      - segment
+      operationId: get_historical_event_data
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: parameter
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /get_all_ai_created_segments_or_offers:
+    get:
+      summary: all_ai_created_segments
+      tags:
+      - segment
+      operationId: all_ai_created_segments
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: event_type
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /segment_offer_ai_create_v2:
+    post:
+      summary: Refinancer-HELOC
+      tags:
+      - segment
+      operationId: Refinancer-HELOC
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Refinancer-HELOC-Request'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /segment_offer_source_config:
+    get:
+      summary: edit Refinancer-HELOC
+      tags:
+      - segment
+      operationId: editRefinancer-HELOC
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: source
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /segment_offer_source_total_records:
+    get:
+      summary: get target Refinancer-HELOC
+      tags:
+      - segment
+      operationId: gettargetRefinancer-HELOC
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: where_condition
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: sql_where_condition
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: source
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: entity_type
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /segment_offer_create:
+    post:
+      summary: review Refinancer-HELOC
+      tags:
+      - segment
+      operationId: reviewRefinancer-HELOC
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/reviewRefinancer-HELOCRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /segment_offer_save:
+    post:
+      summary: save segment Refinancer-HELOC
+      tags:
+      - segment
+      operationId: savesegmentRefinancer-HELOC
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/savesegmentRefinancer-HELOCRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /delete_item:
+    delete:
+      summary: delete segment
+      tags:
+      - segment
+      operationId: deletesegment
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/deletesegmentrequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /segment_offer_custom_get_info:
+    get:
+      summary: copy offer
+      tags:
+      - Offer
+      operationId: copyoffer
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: pk
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: sk
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: entity_type
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: process_type
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /mapping_tables:
+    get:
+      summary: date import
+      tags:
+      - Intregrations
+      operationId: dateimport
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /get_document_file_upload_s3_presigned_url:
+    get:
+      summary: agree and upload
+      tags:
+      - Intregrations
+      operationId: agreeandupload
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: file_name
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: server_table
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /document_create:
+    post:
+      summary: document create
+      tags:
+      - Intregrations
+      operationId: documentcreate
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/documentcreaterequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /document_mapping_and_restore:
+    post:
+      summary: document_mapping_and_restore
+      tags:
+      - Intregrations
+      operationId: document_mapping_and_restore
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/document_mapping_and_restore_request'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /document_update_with_selected_channels:
+    post:
+      summary: document_update_with_selected_channels
+      tags:
+      - Intregrations
+      operationId: document_update_with_selected_channels
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/document_update_with_selected_channels_request'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /is_user_capable_to_create_campaign:
+    get:
+      summary: is_user_capable_to_create_campaign
+      tags:
+      - campaigns
+      operationId: is_user_capable_to_create_campaign
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /get_campaign_objective_channel_vendors:
+    get:
+      summary: create new campaigns
+      tags:
+      - campaigns
+      operationId: createnewcampaigns
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /create_campaign_id:
+    post:
+      summary: create_campaign_id
+      tags:
+      - campaigns
+      operationId: create_campaign_id
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/create_campaign_id_request'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /campaign_related_sources:
+    get:
+      summary: campaign_related_sourcesparameter=document
+      tags:
+      - campaigns
+      operationId: campaign_related_sourcesparameter=document
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: parameter
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /campaign_ai_segments:
+    get:
+      summary: campaign_ai_segments
+      tags:
+      - campaigns
+      operationId: campaign_ai_segments
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /add_data_source_or_segment_2_campaign:
+    post:
+      summary: add_data_source_or_segment_2_campaign
+      tags:
+      - campaigns
+      operationId: add_data_source_or_segment_2_campaign
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/add_data_source_or_segment_2_campaign_request'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /segment_multiple_offers:
+    get:
+      summary: segment_multiple_offers
+      tags:
+      - campaigns
+      operationId: segment_multiple_offers
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: campaign_pk
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: campaign_sk
+        in: query
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /campaign_add_segment_offers:
+    post:
+      summary: campaign_add_segment_offers
+      tags:
+      - campaigns
+      operationId: campaign_add_segment_offers
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/campaign_add_segment_offers_request'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /campaign_confirm:
+    post:
+      summary: campaign_confirm
+      tags:
+      - campaigns
+      operationId: campaign_confirm
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Authorization
+        in: header
+        required: false
+        default: Bearer {token}
+        type: string
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/campaign_confirm_request'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+definitions:
+  Refinancer-HELOC-Request:
+    title: Refinancer-HELOC-Request
+    example:
+      event_id: ai#segment1701691931898061345cae02b6f6be78f10c10600bcd77d67
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewRefinancer-HELOCRequest:
+    title: reviewRefinancer-HELOCRequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: BORROWER_PERSONA
+          - 4
+        - '>=':
+          - var: PREPAYMENT_SCORE
+          - 350
+        - '>=':
+          - var: HELOC_SCORE
+          - 700
+      where_condition: (BORROWER_PERSONA == 4 && PREPAYMENT_SCORE >= 350 && HELOC_SCORE >= 700)
+      sql_where_condition: (BORROWER_PERSONA = 4 AND PREPAYMENT_SCORE >= 350 AND HELOC_SCORE >= 700)
+      source: Portfolio_Loan_Data
+      entity_type: segment
+      name: '{{rndname}}'
+      description: Seeks to continously monitor rate environment and get a better deal on current home. Might want to take a second line of credit.
+      total_records: 79
+      process_type: create
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+  JsonWhereCondition:
+    title: JsonWhereCondition
+    example:
+      and:
+      - ==:
+        - var: BORROWER_PERSONA
+        - 4
+      - '>=':
+        - var: PREPAYMENT_SCORE
+        - 350
+      - '>=':
+        - var: HELOC_SCORE
+        - 700
+    type: object
+    properties:
+      and:
+        type: array
+        items:
+          $ref: '#/definitions/And'
+    required:
+    - and
+  And:
+    title: And
+    example:
+      ==:
+      - var: BORROWER_PERSONA
+      - 4
+    type: object
+    properties:
+      ==:
+        type: array
+        items:
+          $ref: '#/definitions/API'
+      '>=':
+        type: array
+        items:
+          $ref: '#/definitions/API'
+  API:
+    title: API
+    example:
+      var: BORROWER_PERSONA
+    type: object
+    properties:
+      var:
+        type: string
+  savesegmentRefinancer-HELOCRequest:
+    title: savesegmentRefinancer-HELOCRequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: segment
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  Refinancer-Refinance-Request:
+    title: Refinancer-Refinance-Request
+    example:
+      event_id: ai#segment170169193189806135ca8ee65af7f697a5dba41a0bac3720d
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewRefinancer-RefinanceRequest:
+    title: reviewRefinancer-RefinanceRequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: BORROWER_PERSONA
+          - 4
+        - '>=':
+          - var: PREPAYMENT_SCORE
+          - 600
+        - '>=':
+          - var: REFINANCE_SCORE
+          - 400
+      where_condition: (BORROWER_PERSONA == 4 && PREPAYMENT_SCORE >= 600 && REFINANCE_SCORE >= 400)
+      sql_where_condition: (BORROWER_PERSONA = 4 AND PREPAYMENT_SCORE >= 600 AND REFINANCE_SCORE >= 400)
+      source: Portfolio_Loan_Data
+      entity_type: segment
+      name: '{{rndname}}'
+      description: Seeks to continously monitor rate environment and get a better deal on current home. An ideal candidate for a Refinance offer.
+      total_records: 81
+      process_type: create
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+  SaveRefinancer-RefinanceRequest:
+    title: SaveRefinancer-RefinanceRequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: segment
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  Downsizer-PurchaseConformingRequest:
+    title: Downsizer-PurchaseConformingRequest
+    example:
+      event_id: ai#segment1701691931898061365814a80c56ccc32caed875878be280d
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewDownsizer-PurchaseConformingRequest:
+    title: reviewDownsizer-PurchaseConformingRequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: BORROWER_PERSONA
+          - 3
+        - '>=':
+          - var: PREPAYMENT_SCORE
+          - 300
+        - '>=':
+          - var: PURCHASE_SCORE
+          - 700
+      where_condition: (BORROWER_PERSONA == 3 && PREPAYMENT_SCORE >= 300 && PURCHASE_SCORE >= 700)
+      sql_where_condition: (BORROWER_PERSONA = 3 AND PREPAYMENT_SCORE >= 300 AND PURCHASE_SCORE >= 700)
+      source: Portfolio_Loan_Data
+      entity_type: segment
+      name: '{{rndname}}'
+      description: Looking to downsize for retirement or lifestyle changes, prefers low-maintenance properties, may have substantial equity. Would benefit from a new home purchase.
+      total_records: 69
+      process_type: create
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+  saveDownsizer-PurchaseConformingRequest:
+    title: saveDownsizer-PurchaseConformingRequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: segment
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  Investor-Cashout-Request:
+    title: Investor-Cashout-Request
+    example:
+      event_id: ai#segment1701691931898061370206fe28b6a435d9b6878087fa58739
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewInvestor-CashoutRequest:
+    title: reviewInvestor-CashoutRequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: BORROWER_PERSONA
+          - 2
+        - '>=':
+          - var: PREPAYMENT_SCORE
+          - 500
+        - '>=':
+          - var: REFINANCE_SCORE
+          - 600
+        - '>=':
+          - var: HELOC_SCORE
+          - 400
+      where_condition: (BORROWER_PERSONA == 2 && PREPAYMENT_SCORE >= 500 && REFINANCE_SCORE >= 600 && HELOC_SCORE >= 400)
+      sql_where_condition: (BORROWER_PERSONA = 2 AND PREPAYMENT_SCORE >= 500 AND REFINANCE_SCORE >= 600 AND HELOC_SCORE >= 400)
+      source: Portfolio_Loan_Data
+      entity_type: segment
+      name: '{{rndname}}'
+      description: Seeks properties for investment, interested in market trends, likely to opt for properties with high rental yields. Would prefer to take cash for investments.
+      total_records: 39
+      process_type: create
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+  saveInvestor-CashoutRequest:
+    title: saveInvestor-CashoutRequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: segment
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  Conservative-Refinance-Request:
+    title: Conservative-Refinance-Request
+    example:
+      event_id: ai#segment170169193189806137bea05fb1600611119286087e6427527
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewConservative-RefinanceRequest:
+    title: reviewConservative-RefinanceRequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: BORROWER_PERSONA
+          - 1
+        - '>=':
+          - var: PREPAYMENT_SCORE
+          - 500
+        - '>=':
+          - var: REFINANCE_SCORE
+          - 600
+      where_condition: (BORROWER_PERSONA == 1 && PREPAYMENT_SCORE >= 500 && REFINANCE_SCORE >= 600)
+      sql_where_condition: (BORROWER_PERSONA = 1 AND PREPAYMENT_SCORE >= 500 AND REFINANCE_SCORE >= 600)
+      source: Portfolio_Loan_Data
+      entity_type: segment
+      name: '{{rndname}}'
+      description: Risk-averse, seeks stable investments, prefers fixed-rate mortgages, values long-term financial security. Would benefit from a Refinance.
+      total_records: 55
+      process_type: create
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+  saveConservative-RefinanceRequest:
+    title: saveConservative-RefinanceRequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: segment
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  Conservative-HELOC-Request:
+    title: Conservative-HELOC-Request
+    example:
+      event_id: ai#segment170169193189806139038bb1bf03ac2b5f920021f99e1b799
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewConservative-HELOCRequest:
+    title: reviewConservative-HELOCRequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: BORROWER_PERSONA
+          - 1
+        - '>=':
+          - var: PREPAYMENT_SCORE
+          - 500
+        - '>=':
+          - var: HELOC_SCORE
+          - 600
+      where_condition: (BORROWER_PERSONA == 1 && PREPAYMENT_SCORE >= 500 && HELOC_SCORE >= 600)
+      sql_where_condition: (BORROWER_PERSONA = 1 AND PREPAYMENT_SCORE >= 500 AND HELOC_SCORE >= 600)
+      source: Portfolio_Loan_Data
+      entity_type: segment
+      name: '{{rndname}}'
+      description: Risk-averse, seeks stable investments, prefers fixed-rate mortgages, values long-term financial security. Would prefer a Line of Credit.
+      total_records: 57
+      process_type: create
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+  saveConservative-HELOCRequest:
+    title: saveConservative-HELOCRequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: segment
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  Refinancer-Cashout-Request:
+    title: Refinancer-Cashout-Request
+    example:
+      event_id: ai#segment170169193189806139b6e60f20d2f91d9fc6b5675a95da483
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewRefinancer-CashoutRequest:
+    title: reviewRefinancer-CashoutRequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: BORROWER_PERSONA
+          - 4
+        - '>=':
+          - var: PREPAYMENT_SCORE
+          - 550
+        - '>=':
+          - var: REFINANCE_SCORE
+          - 400
+        - '>=':
+          - var: HELOC_SCORE
+          - 450
+      where_condition: (BORROWER_PERSONA == 4 && PREPAYMENT_SCORE >= 550 && REFINANCE_SCORE >= 400 && HELOC_SCORE >= 450)
+      sql_where_condition: (BORROWER_PERSONA = 4 AND PREPAYMENT_SCORE >= 550 AND REFINANCE_SCORE >= 400 AND HELOC_SCORE >= 450)
+      source: Portfolio_Loan_Data
+      entity_type: segment
+      name: '{{rndname}}'
+      description: Seeks to continously monitor rate environment and get a better deal on current home. Might want to take cashout with rising property prices.
+      total_records: 51
+      process_type: create
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+  saveRefinancer-CashoutRequest:
+    title: saveRefinancer-CashoutRequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: segment
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  Upgrader-PurchaseFHARequest:
+    title: Upgrader-PurchaseFHARequest
+    example:
+      event_id: ai#segment170169193189906899645103e0eeb78f0b959417a33b255b
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewUpgrader-PurchaseFHARequest:
+    title: reviewUpgrader-PurchaseFHARequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: BORROWER_PERSONA
+          - 5
+        - '>=':
+          - var: PREPAYMENT_SCORE
+          - 300
+        - '>=':
+          - var: PURCHASE_SCORE
+          - 600
+      where_condition: (BORROWER_PERSONA == 5 && PREPAYMENT_SCORE >= 300 && PURCHASE_SCORE >= 600)
+      sql_where_condition: (BORROWER_PERSONA = 5 AND PREPAYMENT_SCORE >= 300 AND PURCHASE_SCORE >= 600)
+      source: Portfolio_Loan_Data
+      entity_type: segment
+      name: '{{rndname}}'
+      description: Existing homeowner looking to upgrade, values larger space or better neighborhoods, has past mortgage experience. Might want to take a new FHA Purchase Loan.
+      total_records: 95
+      process_type: create
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+  saveUpgrader-PurchaseFHARequest:
+    title: saveUpgrader-PurchaseFHARequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: segment
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  Upgrader-Cashout-Request:
+    title: Upgrader-Cashout-Request
+    example:
+      event_id: ai#segment1701691931899068b65afb2393fc1959ce46f3ff7551713e
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewUpgrader-CashoutRequest:
+    title: reviewUpgrader-CashoutRequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: BORROWER_PERSONA
+          - 5
+        - '>=':
+          - var: PREPAYMENT_SCORE
+          - 500
+        - '>=':
+          - var: REFINANCE_SCORE
+          - 600
+        - '>=':
+          - var: HELOC_SCORE
+          - 500
+      where_condition: (BORROWER_PERSONA == 5 && PREPAYMENT_SCORE >= 500 && REFINANCE_SCORE >= 600 && HELOC_SCORE >= 500)
+      sql_where_condition: (BORROWER_PERSONA = 5 AND PREPAYMENT_SCORE >= 500 AND REFINANCE_SCORE >= 600 AND HELOC_SCORE >= 500)
+      source: Portfolio_Loan_Data
+      entity_type: segment
+      name: '{{rndname}}'
+      description: Existing homeowner looking to upgrade, values larger space or better neighborhoods, has past mortgage experience. Might want to take equity out for a new home purchase.
+      total_records: 36
+      process_type: create
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+  saveUpgrader-CashoutRequest:
+    title: saveUpgrader-CashoutRequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: segment
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  reviewcopysegmentrequest:
+    title: reviewcopysegmentrequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: BORROWER_PERSONA
+          - 5
+        - '>=':
+          - var: PREPAYMENT_SCORE
+          - 500
+        - '>=':
+          - var: REFINANCE_SCORE
+          - 600
+        - '>=':
+          - var: HELOC_SCORE
+          - 500
+      where_condition: (BORROWER_PERSONA == 5 && PREPAYMENT_SCORE >= 500 && REFINANCE_SCORE >= 600 && HELOC_SCORE >= 500)
+      sql_where_condition: (BORROWER_PERSONA = 5 AND PREPAYMENT_SCORE >= 500 AND REFINANCE_SCORE >= 600 AND HELOC_SCORE >= 500)
+      source: Portfolio_Loan_Data
+      entity_type: segment
+      name: '{{rndname}}'
+      description: Existing homeowner looking to upgrade, values larger space or better neighborhoods, has past mortgage experience. Might want to take equity out for a new home purchase.
+      total_records: 36
+      process_type: copy
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+  savecopysegmentrequest:
+    title: savecopysegmentrequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: segment
+      process_type: copy
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  deletesegmentrequest:
+    title: deletesegmentrequest
+    example:
+      event_sk: segment#1702027402253229686d23041d631ba57677099ff37f73448
+      event_pk: segment#upgrader-cashout 5612 (1)
+    type: object
+    properties:
+      event_sk:
+        type: string
+      event_pk:
+        type: string
+    required:
+    - event_sk
+    - event_pk
+  GeneralRequest:
+    title: GeneralRequest
+    example:
+      event_id: ai#offer#16959320432108868fa221edf1c22aaf30501914660d4013
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  FHAPISavingsRequest:
+    title: FHAPISavingsRequest
+    example:
+      event_id: ai#offer#1695932043210886a2a80e882f896c9c16001c2fedb733bc
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewFHAPISavingsRequest:
+    title: reviewFHAPISavingsRequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: NEW_LOAN_PURPOSE
+          - R
+        - '>=':
+          - var: NEW_PI_SAVINGS_MO
+          - 70
+        - <=:
+          - var: NEW_TERM_REDUCTION
+          - 0
+        - '>=':
+          - var: NEW_TERM_REDUCTION
+          - -60
+      where_condition: (NEW_LOAN_PURPOSE == 'R' && NEW_PI_SAVINGS_MO >= 70 && NEW_TERM_REDUCTION <= 0 && NEW_TERM_REDUCTION >= -60)
+      sql_where_condition: (NEW_LOAN_PURPOSE = 'R' AND NEW_PI_SAVINGS_MO >= 70 AND NEW_TERM_REDUCTION <= 0 AND NEW_TERM_REDUCTION >= -60)
+      source: SNG_PRCNG_OUTPUT
+      entity_type: offer
+      name: '{{rndname}}'
+      description: Pricing Engine based offers. They apply your rate data to your list and generate personalized scenarios for borrower engagment.
+      total_records: 320
+      process_type: create
+      dateTime: {}
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition10'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+      dateTime:
+        type: object
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+    - dateTime
+  JsonWhereCondition10:
+    title: JsonWhereCondition10
+    example:
+      and:
+      - ==:
+        - var: NEW_LOAN_PURPOSE
+        - R
+      - '>=':
+        - var: NEW_PI_SAVINGS_MO
+        - 70
+      - <=:
+        - var: NEW_TERM_REDUCTION
+        - 0
+      - '>=':
+        - var: NEW_TERM_REDUCTION
+        - -60
+    type: object
+    properties:
+      and:
+        type: array
+        items:
+          $ref: '#/definitions/And10'
+    required:
+    - and
+  And10:
+    title: And10
+    example:
+      ==:
+      - var: NEW_LOAN_PURPOSE
+      - R
+    type: object
+    properties:
+      ==:
+        type: array
+        items:
+          $ref: '#/definitions/API'
+      '>=':
+        type: array
+        items:
+          $ref: '#/definitions/API'
+      <=:
+        type: array
+        items:
+          $ref: '#/definitions/API'
+  saveFHAPISavingsRequest:
+    title: saveFHAPISavingsRequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: offer
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  RateTermPIBenefitRequest:
+    title: RateTermPIBenefitRequest
+    example:
+      event_id: ai#offer#1695932043210886ab2b81c6691c98cbb85716352053f03d
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewRateTermPIBenefitRequest:
+    title: reviewRateTermPIBenefitRequest
+    example:
+      json_where_condition:
+        and:
+        - ==:
+          - var: NEW_LOAN_PURPOSE
+          - R
+        - '>=':
+          - var: NEW_PI_SAVINGS_MO
+          - 70
+        - <=:
+          - var: NEW_TERM_REDUCTION
+          - 0
+        - '>=':
+          - var: NEW_TERM_REDUCTION
+          - -60
+      where_condition: (NEW_LOAN_PURPOSE == 'R' && NEW_PI_SAVINGS_MO >= 70 && NEW_TERM_REDUCTION <= 0 && NEW_TERM_REDUCTION >= -60)
+      sql_where_condition: (NEW_LOAN_PURPOSE = 'R' AND NEW_PI_SAVINGS_MO >= 70 AND NEW_TERM_REDUCTION <= 0 AND NEW_TERM_REDUCTION >= -60)
+      source: SNG_PRCNG_OUTPUT
+      entity_type: offer
+      name: '{{rndname}}'
+      description: Pricing Engine based offers. They apply your rate data to your list and generate personalized scenarios for borrower engagment.
+      total_records: 320
+      process_type: create
+      dateTime: {}
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition10'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+      dateTime:
+        type: object
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+    - dateTime
+  saveRateTermPIBenefitRequest:
+    title: saveRateTermPIBenefitRequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: offer
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  CashOutRequest:
+    title: CashOutRequest
+    example:
+      event_id: ai#offer#1695932043210886adb7d403892358bb050002be94a7bd42
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewCashOutRequest:
+    title: reviewCashOutRequest
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition10'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+      dateTime:
+        type: object
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+    - dateTime
+  saveCashOutRequest:
+    title: saveCashOutRequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: offer
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  PurchaseFHARequest:
+    title: PurchaseFHARequest
+    example:
+      event_id: ai#offer#1695932043210886da790df8f9e6b42417400f45424f6090
+    type: object
+    properties:
+      event_id:
+        type: string
+    required:
+    - event_id
+  reviewPurchaseFHARequest:
+    title: reviewPurchaseFHARequest
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition13'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+      dateTime:
+        type: object
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+    - dateTime
+  JsonWhereCondition13:
+    title: JsonWhereCondition13
+    type: object
+    properties:
+      and:
+        type: array
+        items:
+          $ref: '#/definitions/And13'
+    required:
+    - and
+  And13:
+    title: And13
+    example:
+      ==:
+      - var: NEW_LOAN_PURPOSE
+      - P
+    type: object
+    properties:
+      ==:
+        type: array
+        items:
+          $ref: '#/definitions/API'
+    required:
+    - ==
+  savePurchaseFHARequest:
+    title: savePurchaseFHARequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: offer
+      process_type: create
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  reviewcopyofferrequest:
+    title: reviewcopyofferrequest
+    type: object
+    properties:
+      json_where_condition:
+        $ref: '#/definitions/JsonWhereCondition13'
+      where_condition:
+        type: string
+      sql_where_condition:
+        type: string
+      source:
+        type: string
+      entity_type:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      total_records:
+        type: integer
+        format: int32
+      process_type:
+        type: string
+      dateTime:
+        type: object
+    required:
+    - json_where_condition
+    - where_condition
+    - sql_where_condition
+    - source
+    - entity_type
+    - name
+    - description
+    - total_records
+    - process_type
+    - dateTime
+  savecopyofferrequest:
+    title: savecopyofferrequest
+    example:
+      pk: ''
+      sk: ''
+      entity_type: offer
+      process_type: copy
+    type: object
+    properties:
+      pk:
+        type: string
+      sk:
+        type: string
+      entity_type:
+        type: string
+      process_type:
+        type: string
+    required:
+    - pk
+    - sk
+    - entity_type
+    - process_type
+  deleteofferrequest:
+    title: deleteofferrequest
+    example:
+      event_sk: offer#170203124030990128f35c271278c32e864d29cd99bac5230
+      event_pk: offer#purchase fha 3123 (1)
+    type: object
+    properties:
+      event_sk:
+        type: string
+      event_pk:
+        type: string
+    required:
+    - event_sk
+    - event_pk
+  documentcreaterequest:
+    title: documentcreaterequest
+    example:
+      uploadFileName: LOANSAMPLE822csvdocument1702032343167298818b560e0ae04a5fc3d9e4b8192911ba5.csv
+      importName: test 5341
+      uploadType: Chat_Logs
+      description: test......
+    type: object
+    properties:
+      uploadFileName:
+        type: string
+      importName:
+        type: string
+      uploadType:
+        type: string
+      description:
+        type: string
+    required:
+    - uploadFileName
+    - importName
+    - uploadType
+    - description
+  document_mapping_and_restore_request:
+    title: document_mapping_and_restore_request
+    example:
+      document_id: document#Chat_Logs_temp
+      mapped_document:
+        index: Agent ID who responded
+        UNIQUE_ID: Chat End Date Time
+        CURRENT_FICO_PRIM: ''
+        PROP_STATE: ''
+        PROP_ZIP: ''
+        UNPAID_BALANCE: ''
+        INTEREST_RATE: ''
+        PRINCIPAL_AND_INTEREST: ''
+        MI_AMT: ''
+        LOAN_TYPE: ''
+        LOAN_TERM: ''
+        ORIGINATION_DATE: ''
+        REMAINING_TERM: ''
+        ORIG_HELOC_BALANCE: ''
+        CURRENT_PROPERTY_VALUE: ''
+        LTV: ''
+        PROPERTY_TYPE: ''
+        CURRENT_OCCUPANCY_TYPE: ''
+        NUMBER_OF_UNITS: ''
+    type: object
+    properties:
+      document_id:
+        type: string
+      mapped_document:
+        $ref: '#/definitions/MappedDocument'
+    required:
+    - document_id
+    - mapped_document
+  MappedDocument:
+    title: MappedDocument
+    example:
+      index: Agent ID who responded
+      UNIQUE_ID: Chat End Date Time
+      CURRENT_FICO_PRIM: ''
+      PROP_STATE: ''
+      PROP_ZIP: ''
+      UNPAID_BALANCE: ''
+      INTEREST_RATE: ''
+      PRINCIPAL_AND_INTEREST: ''
+      MI_AMT: ''
+      LOAN_TYPE: ''
+      LOAN_TERM: ''
+      ORIGINATION_DATE: ''
+      REMAINING_TERM: ''
+      ORIG_HELOC_BALANCE: ''
+      CURRENT_PROPERTY_VALUE: ''
+      LTV: ''
+      PROPERTY_TYPE: ''
+      CURRENT_OCCUPANCY_TYPE: ''
+      NUMBER_OF_UNITS: ''
+    type: object
+    properties:
+      index:
+        type: string
+      UNIQUE_ID:
+        type: string
+      CURRENT_FICO_PRIM:
+        type: string
+      PROP_STATE:
+        type: string
+      PROP_ZIP:
+        type: string
+      UNPAID_BALANCE:
+        type: string
+      INTEREST_RATE:
+        type: string
+      PRINCIPAL_AND_INTEREST:
+        type: string
+      MI_AMT:
+        type: string
+      LOAN_TYPE:
+        type: string
+      LOAN_TERM:
+        type: string
+      ORIGINATION_DATE:
+        type: string
+      REMAINING_TERM:
+        type: string
+      ORIG_HELOC_BALANCE:
+        type: string
+      CURRENT_PROPERTY_VALUE:
+        type: string
+      LTV:
+        type: string
+      PROPERTY_TYPE:
+        type: string
+      CURRENT_OCCUPANCY_TYPE:
+        type: string
+      NUMBER_OF_UNITS:
+        type: string
+    required:
+    - index
+    - UNIQUE_ID
+    - CURRENT_FICO_PRIM
+    - PROP_STATE
+    - PROP_ZIP
+    - UNPAID_BALANCE
+    - INTEREST_RATE
+    - PRINCIPAL_AND_INTEREST
+    - MI_AMT
+    - LOAN_TYPE
+    - LOAN_TERM
+    - ORIGINATION_DATE
+    - REMAINING_TERM
+    - ORIG_HELOC_BALANCE
+    - CURRENT_PROPERTY_VALUE
+    - LTV
+    - PROPERTY_TYPE
+    - CURRENT_OCCUPANCY_TYPE
+    - NUMBER_OF_UNITS
+  document_update_with_selected_channels_request:
+    title: document_update_with_selected_channels_request
+    example:
+      document_id: document#Chat_Logs_temp
+      selected_channels: []
+    type: object
+    properties:
+      document_id:
+        type: string
+      selected_channels:
+        type: array
+        items:
+          type: string
+    required:
+    - document_id
+    - selected_channels
+  create_campaign_id_request:
+    title: create_campaign_id_request
+    example:
+      name: '{{rndname}}'
+      objective: Awarness
+      selected_channel_vendors:
+      - channel: Email
+        vendors:
+        - Adobe
+      description: test.........
+      channel_type: manual
+    type: object
+    properties:
+      name:
+        type: string
+      objective:
+        type: string
+      selected_channel_vendors:
+        type: array
+        items:
+          $ref: '#/definitions/SelectedChannelVendor'
+      description:
+        type: string
+      channel_type:
+        type: string
+    required:
+    - name
+    - objective
+    - selected_channel_vendors
+    - description
+    - channel_type
+  SelectedChannelVendor:
+    title: SelectedChannelVendor
+    example:
+      channel: Email
+      vendors:
+      - Adobe
+    type: object
+    properties:
+      channel:
+        type: string
+      vendors:
+        type: array
+        items:
+          type: string
+    required:
+    - channel
+    - vendors
+  add_data_source_or_segment_2_campaign_request:
+    title: add_data_source_or_segment_2_campaign_request
+    example:
+      data_sources:
+      - name: Loan Sample Data
+        document_pk: document#Portfolio_Loan_Data
+        document_sk: document#Portfolio_Loan_Data
+      data_sources_type: Ai
+      campaign_pk: ''
+      campaign_sk: ''
+    type: object
+    properties:
+      data_sources:
+        type: array
+        items:
+          $ref: '#/definitions/DataSource'
+      data_sources_type:
+        type: string
+      campaign_pk:
+        type: string
+      campaign_sk:
+        type: string
+    required:
+    - data_sources
+    - data_sources_type
+    - campaign_pk
+    - campaign_sk
+  DataSource:
+    title: DataSource
+    example:
+      name: Loan Sample Data
+      document_pk: document#Portfolio_Loan_Data
+      document_sk: document#Portfolio_Loan_Data
+    type: object
+    properties:
+      name:
+        type: string
+      document_pk:
+        type: string
+      document_sk:
+        type: string
+    required:
+    - name
+    - document_pk
+    - document_sk
+  add_data_source_or_segment_2_campaign_request1:
+    title: add_data_source_or_segment_2_campaign_request1
+    example:
+      segments:
+      - name: Upgrader-Cashout1747
+        segment_pk: segment#upgrader-cashout1747
+        segment_sk: segment#17018663455989084aba2ecdc2f1ddd7f1339dff8aee0187c
+      segments_type: manual
+      campaign_pk: ''
+      campaign_sk: ''
+    type: object
+    properties:
+      segments:
+        type: array
+        items:
+          $ref: '#/definitions/Segment'
+      segments_type:
+        type: string
+      campaign_pk:
+        type: string
+      campaign_sk:
+        type: string
+    required:
+    - segments
+    - segments_type
+    - campaign_pk
+    - campaign_sk
+  Segment:
+    title: Segment
+    example:
+      name: Upgrader-Cashout1747
+      segment_pk: segment#upgrader-cashout1747
+      segment_sk: segment#17018663455989084aba2ecdc2f1ddd7f1339dff8aee0187c
+    type: object
+    properties:
+      name:
+        type: string
+      segment_pk:
+        type: string
+      segment_sk:
+        type: string
+    required:
+    - name
+    - segment_pk
+    - segment_sk
+  campaign_add_segment_offers_request:
+    title: campaign_add_segment_offers_request
+    example:
+      campaign_pk: ''
+      campaign_sk: ''
+      channel_segment_offer:
+      - channel: Email
+        segment_offers:
+        - segment_name: Upgrader-Cashout1747
+          segment_pk: segment#upgrader-cashout1747
+          segment_sk: segment#17018663455989084aba2ecdc2f1ddd7f1339dff8aee0187c
+          segment_start_datetime: 2023-12-08 17:04
+          segment_end_datetime: ' '
+          segment_min_budget: ''
+          segment_max_budget: ''
+          segment_budget_type: daily
+          segment_no_limit: true
+          segment_batch_size: ''
+          segment_batch_type: daily
+          offers:
+          - offer_name: Rate Term PI Benefit 1
+            offer_sk: offer#1701860468650535860bf5de82712db4884280d349cb7c566
+            offer_pk: offer#rate term pi benefit 1
+            offer_segment_count: 8
+            template_pk: '8954253947521835103'
+            template_sk: '8954253947521835103'
+            template_name: Adobe Creative Suite
+        total_offers: 1
+    type: object
+    properties:
+      campaign_pk:
+        type: string
+      campaign_sk:
+        type: string
+      channel_segment_offer:
+        type: array
+        items:
+          $ref: '#/definitions/ChannelSegmentOffer'
+    required:
+    - campaign_pk
+    - campaign_sk
+    - channel_segment_offer
+  ChannelSegmentOffer:
+    title: ChannelSegmentOffer
+    example:
+      channel: Email
+      segment_offers:
+      - segment_name: Upgrader-Cashout1747
+        segment_pk: segment#upgrader-cashout1747
+        segment_sk: segment#17018663455989084aba2ecdc2f1ddd7f1339dff8aee0187c
+        segment_start_datetime: 2023-12-08 17:04
+        segment_end_datetime: ' '
+        segment_min_budget: ''
+        segment_max_budget: ''
+        segment_budget_type: daily
+        segment_no_limit: true
+        segment_batch_size: ''
+        segment_batch_type: daily
+        offers:
+        - offer_name: Rate Term PI Benefit 1
+          offer_sk: offer#1701860468650535860bf5de82712db4884280d349cb7c566
+          offer_pk: offer#rate term pi benefit 1
+          offer_segment_count: 8
+          template_pk: '8954253947521835103'
+          template_sk: '8954253947521835103'
+          template_name: Adobe Creative Suite
+      total_offers: 1
+    type: object
+    properties:
+      channel:
+        type: string
+      segment_offers:
+        type: array
+        items:
+          $ref: '#/definitions/SegmentOffer'
+      total_offers:
+        type: integer
+        format: int32
+    required:
+    - channel
+    - segment_offers
+    - total_offers
+  SegmentOffer:
+    title: SegmentOffer
+    example:
+      segment_name: Upgrader-Cashout1747
+      segment_pk: segment#upgrader-cashout1747
+      segment_sk: segment#17018663455989084aba2ecdc2f1ddd7f1339dff8aee0187c
+      segment_start_datetime: 2023-12-08 17:04
+      segment_end_datetime: ' '
+      segment_min_budget: ''
+      segment_max_budget: ''
+      segment_budget_type: daily
+      segment_no_limit: true
+      segment_batch_size: ''
+      segment_batch_type: daily
+      offers:
+      - offer_name: Rate Term PI Benefit 1
+        offer_sk: offer#1701860468650535860bf5de82712db4884280d349cb7c566
+        offer_pk: offer#rate term pi benefit 1
+        offer_segment_count: 8
+        template_pk: '8954253947521835103'
+        template_sk: '8954253947521835103'
+        template_name: Adobe Creative Suite
+    type: object
+    properties:
+      segment_name:
+        type: string
+      segment_pk:
+        type: string
+      segment_sk:
+        type: string
+      segment_start_datetime:
+        type: string
+      segment_end_datetime:
+        type: string
+      segment_min_budget:
+        type: string
+      segment_max_budget:
+        type: string
+      segment_budget_type:
+        type: string
+      segment_no_limit:
+        type: boolean
+      segment_batch_size:
+        type: string
+      segment_batch_type:
+        type: string
+      offers:
+        type: array
+        items:
+          $ref: '#/definitions/Offer'
+    required:
+    - segment_name
+    - segment_pk
+    - segment_sk
+    - segment_start_datetime
+    - segment_end_datetime
+    - segment_min_budget
+    - segment_max_budget
+    - segment_budget_type
+    - segment_no_limit
+    - segment_batch_size
+    - segment_batch_type
+    - offers
+  Offer:
+    title: Offer
+    example:
+      offer_name: Rate Term PI Benefit 1
+      offer_sk: offer#1701860468650535860bf5de82712db4884280d349cb7c566
+      offer_pk: offer#rate term pi benefit 1
+      offer_segment_count: 8
+      template_pk: '8954253947521835103'
+      template_sk: '8954253947521835103'
+      template_name: Adobe Creative Suite
+    type: object
+    properties:
+      offer_name:
+        type: string
+      offer_sk:
+        type: string
+      offer_pk:
+        type: string
+      offer_segment_count:
+        type: integer
+        format: int32
+      template_pk:
+        type: string
+      template_sk:
+        type: string
+      template_name:
+        type: string
+    required:
+    - offer_name
+    - offer_sk
+    - offer_pk
+    - offer_segment_count
+    - template_pk
+    - template_sk
+    - template_name
+  campaign_confirm_request:
+    title: campaign_confirm_request
+    example:
+      campaign_pk: ''
+      campaign_sk: ''
+    type: object
+    properties:
+      campaign_pk:
+        type: string
+      campaign_sk:
+        type: string
+    required:
+    - campaign_pk
+    - campaign_sk
+security: []
+tags:
+- name: segment
+- name: Offer
+- name: Intregrations
+- name: campaigns

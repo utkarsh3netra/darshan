@@ -1,0 +1,232 @@
+openapi: "3.0.3"
+info:
+  description: |
+    The Synergi.AI API provides a robust interface for integrating with our AI-powered solutions.
+    
+    # Authentication
+
+    This API is secured using AWS Cognito, ensuring that access is restricted to authenticated and authorized users. Clients can authenticate either by using Cognito-based access or ID tokens, or by directly passing a Bearer token in the authorization header.
+      - AWS Cognito: Users must authenticate via AWS Cognito to receive an access or ID token.
+      - Bearer Token: Alternatively, users can provide an authorization header with a Bearer token.
+
+    <SecurityDefinitions />
+  version: "1.0.0"
+  title: "Synergi API Documentation"
+  contact:
+    email: support@synergi.ai
+    url: https://synergi.ai
+  x-logo:
+    url: "https://images.squarespace-cdn.com/content/v1/6491cd64c4db7014e79fe393/79aab2f9-7b03-4554-8f6c-a54e24a9d8d4/MicrosoftTeams-image.png"
+    altText: synergi.ai
+tags:
+  - name: Company User
+    description: Manage All Company User
+servers:
+  - url: https://u9mscmmds5.execute-api.us-east-1.amazonaws.com/v1
+    description: Development server
+  - url: https://vuhnnch690.execute-api.us-east-1.amazonaws.com/v1
+    description: Production server
+
+paths:
+  /company_add_user:
+    post:
+      security:
+        - Authorization: []
+      tags:
+        - Company User
+      summary: Add user to company
+      description: Company Super admin or admin can add new user
+      requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        email:
+                          type: string
+                          example: 'xyz@abc.com'
+                        company_name:
+                          type: string
+                          example: 'shivay'
+                        role:
+                          type: string
+                          example: 'admin'
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /company_confirm_user:
+    post:
+      tags:
+        - Company User
+      summary: Confirm user
+      description: Company Super admin or admin invited user sign up
+      requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        email:
+                          type: string
+                          example: 'xyz@abc.com'
+                        password:
+                          type: string
+                          example: 'Pass@123'
+                        name:
+                          type: string
+                          example: 'heet'
+                        family_name:
+                          type: string
+                          example: 'patel'
+                        phone_number:
+                          type: string
+                          example: '+11231231237'
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /company_list_user:
+    get:
+      security:
+        - Authorization: []
+      tags:
+        - Company User
+      summary: List all company user
+      description: List all user of specific company
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/company_list_user'          
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/company_list_user'
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /company_edit_user:
+    post:
+      security:
+        - Authorization: []
+      tags:
+        - Company User
+      summary: Company user Edit
+      description: Company Super admin or admin can edit role of exiting user
+      requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        user_id:
+                          type: string
+                          example: 'e48c6dbb-d67e-4a35-b328-2113cfd0fff5'
+                        company_name:
+                          type: string
+                          example: 'shivay-admin'
+                        role:
+                          type: string
+                          example: 'agency'
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /company_delete_user:
+    delete:
+      security:
+        - Authorization: []
+      tags:
+        - Company User
+      summary: Company user Delete
+      description: Company Super admin or admin can delete exiting user
+      requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        user_id:
+                          type: string
+                          example: 'e48c6dbb-d67e-4a35-b328-2113cfd0fff5'
+                        company_name:
+                          type: string
+                          example: 'shivay-admin'
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+#Ref Section
+components:
+  schemas:
+    company_list_user:
+      type: "object"
+      required:
+        - user_email
+        - user_id
+        - user_role
+        - user_status
+        - user_group
+        - company_name
+        - company_hex
+      properties:
+        user_email:
+          description: "user email"
+          type: string
+        user_role:
+          description: "user role"
+          type: string
+        user_id:
+          description: "username or user id"
+          type: string
+        user_status:
+          description: "user_status active or inactive it mean user status is confirm or not"
+          type: string
+        company_name:
+          description: "company name"
+          type: string
+        company_hex:
+          description: "company hex values"
+          type: string
+        user_group:
+          description: "user group"
+          type: string
+  
+  responses:
+    UnauthorizedError:
+      description: Access token is missing or invalid
+  
+  securitySchemes:
+    Authorization:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT    # optional, arbitrary value for documentation purposes

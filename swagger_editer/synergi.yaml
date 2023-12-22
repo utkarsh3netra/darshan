@@ -1,0 +1,668 @@
+openapi: "3.0.3"
+info:
+  description: |
+    The Synergi.AI API provides a robust interface for integrating with our AI-powered solutions.
+    
+    # Authentication
+
+    This API is secured using AWS Cognito, ensuring that access is restricted to authenticated and authorized users. Clients can authenticate either by using Cognito-based access or ID tokens, or by directly passing a Bearer token in the authorization header.
+      - AWS Cognito: Users must authenticate via AWS Cognito to receive an access or ID token.
+      - Bearer Token: Alternatively, users can provide an authorization header with a Bearer token.
+
+    <SecurityDefinitions />
+  version: "1.0.0"
+  title: "Synergi API Documentation"
+  contact:
+    email: support@synergi.ai
+    url: https://synergi.ai
+  x-logo:
+    url: "https://images.squarespace-cdn.com/content/v1/6491cd64c4db7014e79fe393/79aab2f9-7b03-4554-8f6c-a54e24a9d8d4/MicrosoftTeams-image.png"
+    altText: synergi.ai
+tags:
+  - name: segment
+  - name: Offer
+  - name: Intregrations
+  - name: campaigns
+servers:
+  - url: https://u9mscmmds5.execute-api.us-east-1.amazonaws.com/v1
+    description: Development server
+  - url: https://vuhnnch690.execute-api.us-east-1.amazonaws.com/v1
+    description: Production server
+
+paths:
+  /v1/get_historical_event_data:
+    get:
+      tags:
+        - campaigns
+      summary: get_historical_event_data
+      description: get all Event Data of Synergi
+      parameters:
+        - name: parameter
+          in: query
+          schema:
+            type: string
+          example: campaign
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/segment_offer_ai_create_v2:
+    post:
+      tags:
+        - Offer
+      summary: Purchase FHA
+      description: Create AI Offer Purchase FHA
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                event_id: ai#offer#1695932043210886da790df8f9e6b42417400f45424f6090
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/segment_offer_source_config:
+    get:
+      tags:
+        - Offer
+      summary: copy edit offer
+      description: In Copy Offer Select Edit
+      parameters:
+        - name: source
+          in: query
+          schema:
+            type: string
+          example: RateSheet
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/segment_offer_source_total_records:
+    get:
+      tags:
+        - Offer
+      summary: get target Purchase FHA
+      description: get Target data of Offer-Purchase
+      parameters:
+        - name: where_condition
+          in: query
+          schema:
+            type: string
+          example: (NEW_LOAN_PURPOSE == 'P' && NEW_TERM == 360)
+        - name: sql_where_condition
+          in: query
+          schema:
+            type: string
+          example: (NEW_LOAN_PURPOSE = 'P' AND NEW_TERM = 360)
+        - name: source
+          in: query
+          schema:
+            type: string
+          example: SNG_PRCNG_OUTPUT
+        - name: entity_type
+          in: query
+          schema:
+            type: string
+          example: offer
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/segment_offer_create:
+    post:
+      tags:
+        - Offer
+      summary: review copy offer
+      description: Review Entered data of Copy Offer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                json_where_condition:
+                  and:
+                    - '==':
+                        - var: NEW_LOAN_PURPOSE
+                        - P
+                    - '==':
+                        - var: NEW_TERM
+                        - 360
+                where_condition: (NEW_LOAN_PURPOSE == 'P' && NEW_TERM == 360)
+                sql_where_condition: (NEW_LOAN_PURPOSE = 'P' AND NEW_TERM = 360)
+                source: RateSheet
+                entity_type: offer
+                name: '{{rndname}}'
+                description: >-
+                  Pricing Engine based offers. They apply your rate data to your
+                  list and generate personalized scenarios for borrower
+                  engagment.
+                total_records: 1602
+                process_type: copy
+                dateTime: {}
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/segment_offer_save:
+    post:
+      tags:
+        - Offer
+      summary: save copy offer
+      description: After enter all data save Copy Offer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                pk: '{{offer_pk}}'
+                sk: '{{offer_sk}}'
+                entity_type: offer
+                process_type: copy
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/delete_item:
+    delete:
+      tags:
+        - Offer
+      summary: delete offer
+      description: Delete Offer from All Offers
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/segment_offer_custom_get_info:
+    get:
+      tags:
+        - Offer
+      summary: copy offer
+      description: Select Copy Offer to make same Offer
+      parameters:
+        - name: pk
+          in: query
+          schema:
+            type: string
+          example: '{{offer_encode_pk}}'
+        - name: sk
+          in: query
+          schema:
+            type: string
+          example: '{{offer_encode_sk}}'
+        - name: entity_type
+          in: query
+          schema:
+            type: string
+          example: offer
+        - name: process_type
+          in: query
+          schema:
+            type: string
+          example: copy
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/mapping_tables:
+    get:
+      tags:
+        - Intregrations
+      summary: date import
+      description: Select Import Data From Intregrations
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/get_document_file_upload_s3_presigned_url:
+    get:
+      tags:
+        - Intregrations
+      summary: agree and upload
+      description: After fill all data and upload file select Agree and Upload Button
+      parameters:
+        - name: file_name
+          in: query
+          schema:
+            type: string
+          example: LOAN SAMPLE (822).csv
+        - name: server_table
+          in: query
+          schema:
+            type: string
+          example: Chat_Logs
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/document_create:
+    post:
+      tags:
+        - Intregrations
+      summary: document create
+      description: create document which user upload
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                uploadFileName: >-
+                  LOANSAMPLE822csvdocument1702032343167298818b560e0ae04a5fc3d9e4b8192911ba5.csv
+                importName: test 5341
+                uploadType: Chat_Logs
+                description: test......
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/document_mapping_and_restore:
+    post:
+      tags:
+        - Intregrations
+      summary: document_mapping_and_restore
+      description: Finalize Data Import & Review 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                document_id: document#Chat_Logs_temp
+                mapped_document:
+                  index: Agent ID who responded
+                  UNIQUE_ID: Chat End Date Time
+                  CURRENT_FICO_PRIM: ''
+                  PROP_STATE: ''
+                  PROP_ZIP: ''
+                  UNPAID_BALANCE: ''
+                  INTEREST_RATE: ''
+                  PRINCIPAL_AND_INTEREST: ''
+                  MI_AMT: ''
+                  LOAN_TYPE: ''
+                  LOAN_TERM: ''
+                  ORIGINATION_DATE: ''
+                  REMAINING_TERM: ''
+                  ORIG_HELOC_BALANCE: ''
+                  CURRENT_PROPERTY_VALUE: ''
+                  LTV: ''
+                  PROPERTY_TYPE: ''
+                  CURRENT_OCCUPANCY_TYPE: ''
+                  NUMBER_OF_UNITS: ''
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/document_update_with_selected_channels:
+    post:
+      tags:
+        - Intregrations
+      summary: document_update_with_selected_channels
+      description: Final Button of submit all data and data import in Intregrations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                document_id: document#Chat_Logs_temp
+                selected_channels: []
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/is_user_capable_to_create_campaign:
+    get:
+      tags:
+        - campaigns
+      summary: is_user_capable_to_create_campaign
+      description: Select Campaigns in side bar of Synergi
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/get_campaign_objective_channel_vendors:
+    get:
+      tags:
+        - campaigns
+      summary: create new campaigns
+      description: select New Campaigns in Campaigns
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/create_campaign_id:
+    post:
+      tags:
+        - campaigns
+      summary: create_campaign_id
+      description: Enter Campaign name and descriptions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: '{{rndname}}'
+                objective: Awarness
+                selected_channel_vendors:
+                  - channel: Email
+                    vendors:
+                      - Adobe
+                description: test.........
+                channel_type: manual
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/campaign_related_sources:
+    get:
+      tags:
+        - campaigns
+      summary: campaign_related_sources?parameter=segment
+      description: selectter Campaign reladet sources
+      parameters:
+        - name: parameter
+          in: query
+          schema:
+            type: string
+          example: segment
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/campaign_ai_segments:
+    get:
+      tags:
+        - campaigns
+      summary: campaign_ai_segments
+      description: Choose Your Campaign Data Source
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/add_data_source_or_segment_2_campaign:
+    post:
+      tags:
+        - campaigns
+      summary: add_data_source_or_segment_2_campaign
+      description: select data file for campaigns
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                segments:
+                  - name: Upgrader-Cashout1747
+                    segment_pk: segment#upgrader-cashout1747
+                    segment_sk: segment#17018663455989084aba2ecdc2f1ddd7f1339dff8aee0187c
+                segments_type: manual
+                campaign_pk: '{{campaign_pk}}'
+                campaign_sk: '{{campaign_sk}}'
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/segment_multiple_offers:
+    get:
+      tags:
+        - campaigns
+      summary: segment_multiple_offers
+      description: Choose Your Campaign Segments and Rate Sheet
+      parameters:
+        - name: campaign_pk
+          in: query
+          schema:
+            type: string
+          example: '{{campaign_encode_pk}}'
+        - name: campaign_sk
+          in: query
+          schema:
+            type: string
+          example: '{{campaign_encode_sk}}'
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/campaign_add_segment_offers:
+    post:
+      tags:
+        - campaigns
+      summary: campaign_add_segment_offers
+      description: Select Offer and Design Template
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                campaign_pk: '{{campaign_pk}}'
+                campaign_sk: '{{campaign_sk}}'
+                channel_segment_offer:
+                  - channel: Email
+                    segment_offers:
+                      - segment_name: Upgrader-Cashout1747
+                        segment_pk: segment#upgrader-cashout1747
+                        segment_sk: >-
+                          segment#17018663455989084aba2ecdc2f1ddd7f1339dff8aee0187c
+                        segment_start_datetime: 2023-12-08 17:04
+                        segment_end_datetime: ' '
+                        segment_min_budget: ''
+                        segment_max_budget: ''
+                        segment_budget_type: daily
+                        segment_no_limit: true
+                        segment_batch_size: ''
+                        segment_batch_type: daily
+                        offers:
+                          - offer_name: Rate Term PI Benefit 1
+                            offer_sk: >-
+                              offer#1701860468650535860bf5de82712db4884280d349cb7c566
+                            offer_pk: offer#rate term pi benefit 1
+                            offer_segment_count: 8
+                            template_pk: '8954253947521835103'
+                            template_sk: '8954253947521835103'
+                            template_name: Adobe Creative Suite
+                    total_offers: 1
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/campaign_confirm:
+    post:
+      tags:
+        - campaigns
+      summary: campaign_confirm
+      description: Select Confirm Button for Create Campaigns
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                campaign_pk: '{{campaign_pk}}'
+                campaign_sk: '{{campaign_sk}}'
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  /v1/get_all_ai_created_segments_or_offers:
+    get:
+      tags:
+        - Offer
+      summary: get_all_ai_created_offers
+      description: here see all Ai offer can display and select 
+      parameters:
+        - name: event_type
+          in: query
+          schema:
+            type: string
+          example: offer
+      responses:
+        '400':
+          description: "Bad Request"
+        '200':
+          description: "Operation Successful"
+        '500':
+          description: "Internal Server Error"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+  
+#Ref Section
+components:
+  schemas:
+    company_list_user:
+      type: "object"
+      required:
+        - user_email
+        - user_id
+        - user_role
+        - user_status
+        - user_group
+        - company_name
+        - company_hex
+      properties:
+        user_email:
+          description: "user email"
+          type: string
+        user_role:
+          description: "user role"
+          type: string
+        user_id:
+          description: "username or user id"
+          type: string
+        user_status:
+          description: "user_status active or inactive it mean user status is confirm or not"
+          type: string
+        company_name:
+          description: "company name"
+          type: string
+        company_hex:
+          description: "company hex values"
+          type: string
+        user_group:
+          description: "user group"
+          type: string
+  
+  responses:
+    UnauthorizedError:
+      description: Access token is missing or invalid
+  
+  securitySchemes:
+    Authorization:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT    # optional, arbitrary value for documentation purposes
